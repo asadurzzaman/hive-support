@@ -1,0 +1,70 @@
+/* Ltd Feature css */
+
+.hive_ltdFeature {
+    &__title {
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: var(--heading-color);
+    }
+    &__para {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.4;
+        color: var(--paragraph-color);
+    }
+    &__single {
+        background-color: var(--white);
+        padding: 20px 15px;
+        @include responsive(lg) {
+            padding: 20px 10px;
+        }
+        @include responsive(sm) {
+            padding: 20px 10px;
+        }
+        &.padding_grid {
+            padding: 35px 15px;
+            @include responsive(lg) {
+                padding: 33px 10px;
+            }
+        }
+        &.grid_flex {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            .hive_ltdFeature {
+                &__single {
+                    &__contents {
+                        margin-top: 0;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+        &__title {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--heading-color);
+            @include responsive(sm) {
+                font-size: 18px;
+            }
+        }
+        &__para {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.4;
+            color: var(--paragraph-color);
+            @include responsive(lg) {
+                font-size: 15px;
+            }
+            @include responsive(sm) {
+                font-size: 15px;
+            }
+        }
+        &__contents {
+            flex: 1;
+            margin-top: 15px;
+        }
+    }
+}

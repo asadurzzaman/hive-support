@@ -1,0 +1,114 @@
+/* Provide css */
+
+.provide_area {
+    overflow: hidden;
+}
+
+
+.single_provide {
+    background-color: rgba(var(--provide-1-rgb), .05);
+    &__padding {
+        padding: 30px;
+        @include responsive(vxxs) {
+            padding: 20px;
+        }
+    }
+    &:hover {
+        .single_provide  {
+            &__icon {
+                background-color: var(--white);
+                color: var(--provide-1);
+            }
+        }
+    }
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: var(--provide-1);
+        color: var(--white);
+        font-size: 28px;
+        transition: all .3s;
+        img {
+            max-width: 45px;
+        }
+    }
+    &__contents {
+        &__title {
+            font-size: 24px;
+            line-height: 1.2;
+            margin: -5px 0 0;
+            font-weight: 500;
+            @include transition(.3s);
+            &:hover {
+                color: var(--provide-1);
+            }
+            @include responsive(xxs) {
+                font-size: 22px;
+            }
+            @include responsive(vxxs) {
+                font-size: 20px;
+            }
+        }
+        &__para {
+            font-size: 16px;
+            line-height: 24px;
+            color: var(--paragraph-color);
+            @include responsive(xxs) {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+.provide_child {
+    &:nth-child(3n + 2) {
+        .single_provide {
+            background-color: rgba(var(--provide-2-rgb), .05);
+            &:hover {
+                .single_provide  {
+                    &__icon {
+                        background-color: var(--white);
+                        color: var(--provide-2);
+                    }
+                }
+            }
+            &__icon {
+                background-color: var(--provide-2);
+            }
+            &__contents {
+                &__title {
+                    &:hover {
+                        color: var(--provide-2);
+                    }
+                }
+            }
+        }
+    }
+    &:nth-child(3n + 3) {
+        .single_provide {
+            background-color: rgba(var(--provide-3-rgb), .05);
+            &:hover {
+                .single_provide  {
+                    &__icon {
+                        background-color: var(--white);
+                        color: var(--provide-3);
+                    }
+                }
+            }
+            &__icon {
+                background-color: var(--provide-3);
+            }
+            &__contents {
+                &__title {
+                    &:hover {
+                        color: var(--provide-3);
+                    }
+                }
+            }
+        }
+    }
+}

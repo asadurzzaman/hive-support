@@ -1,0 +1,74 @@
+/* Performance css */
+.cutomfield_area {
+    overflow: hidden;
+}
+.performance_area  {
+    overflow: hidden;
+}
+.performance_shapes {
+    position: relative;
+    z-index: 2;
+    &::before {
+        position: absolute;
+        content: "";
+        top: -50px;
+        left: -50px;
+        height: 150px;
+        width: 150px;
+        background-color: var(--main-color-one);
+        border-radius: 50%;
+        z-index: -1;
+    }
+    &__two {
+        position: relative;
+        z-index: 2;
+        &::before,
+        &::after {
+            position: absolute;
+            content: "";
+            z-index: -1;
+            @include responsive(sm) {
+                display: none;
+            }
+        }
+        &::before {
+            top: -70px;
+            right: -70px;
+            height: 150px;
+            width: 150px;
+            background-color: var(--main-color-one);
+            border-radius: 10px;
+        }
+        &::after {
+            bottom: -50px;
+            left: -50px;
+            height: 100px;
+            width: 100px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+        }
+    }
+}
+
+.single_performance {
+    &__thumb {
+        position: relative;
+        @include responsive(xs) {
+            margin: 0 10px;
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            top: -20px;
+            left: -20px;
+            height: 90%;
+            width: calc(100% + 40px);
+            // background: rgba(105, 91, 231, 0.031);
+            background: rgba(var(--main-color-one-rgb), .05);
+            border: 1px solid rgba(var(--main-color-one-rgb), .1);
+            backdrop-filter: blur(50px);
+            z-index: -1;
+            border-radius: 10px;
+        }
+    }
+}

@@ -1,0 +1,138 @@
+/* Countdown Css */
+
+.countdown-para {
+    line-height: 30px;
+}
+
+.global-timer {
+    .syotimer__body {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: center;
+        text-align: center;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-pack: distribute;
+        gap: 15px;
+        @include responsive(xxs) {
+            gap: 10px;
+        }
+        .syotimer-cell {
+            .syotimer-cell__value {
+                font-size: 20px;
+                color: var(--white);
+                font-weight: 500;
+                line-height: 1.2;
+                font-family: var(--heading-font);
+                background: rgba(var(--white-rgb), .1);
+                padding: 10px 15px;
+                border-radius: 5px;
+                @include responsive(allPhone) {
+                    font-size: 30px;
+                }
+                @include responsive(vxxs) {
+                    font-size: 24px;
+                }
+            }
+            .syotimer-cell__unit {
+                font-size: 16px;
+                text-transform: capitalize;
+                font-weight: 400;
+                line-height: 19px;
+                color: rgba(var(--white-rgb), .7);
+                margin-top: 10px;
+                @include responsive(allPhone) {
+                    font-size: 16px;
+                }
+                @include responsive(vxxs) {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+    &.simple-timer-two {
+        margin-top: 35px;
+        &.radius-0 {
+            .syotimer__body {
+                .syotimer-cell {
+                    border-radius: 0;
+                }
+            }
+        }
+        &.color-two {
+            .syotimer__body {
+                .syotimer-cell {
+                    background: var(--main-color-two);
+                }
+            }
+        }
+        &.color-three {
+            .syotimer__body {
+                .syotimer-cell {
+                    background: var(--main-color-three);
+                }
+            }
+        }
+        &.color-four {
+            .syotimer__body {
+                .syotimer-cell {
+                    background: var(--main-color-four);
+                }
+            }
+        }
+        @include responsive(allPhone) {
+            margin-top: 20px;
+        }
+        .syotimer__body {
+            justify-content: flex-start;
+            .syotimer-cell {
+                background: var(--main-color-one);
+                color: $white;
+                padding: 15px 20px;
+                border-radius: 10px;
+                @include responsive(lg) {
+                    padding: 10px 20px;
+                }
+                @include responsive(xxs) {
+                    padding: 7px 13px;
+                }
+                @include responsive(vxxs) {
+                    padding: 5px 10px;
+                }
+                .syotimer-cell__value {
+                    color: $white;
+                    font-family: var(--jost-font);
+                    font-weight: 600;
+                    font-size: 43px;
+                    @include responsive(lg) {
+                        font-size: 32px;
+                    }
+                    @include responsive(allPhone) {
+                        font-size: 28px;
+                        line-height: 32px;
+                    }
+                    @include responsive(vxxs) {
+                        font-size: 24px;
+                        line-height: 26px;
+                    }
+                }
+                .syotimer-cell__unit {
+                    color: $white;
+                    line-height: 21px;
+                    @include responsive(allPhone) {
+                        font-size: 15px;
+                    }
+                    @include responsive(vxxs) {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -49,7 +49,7 @@ function hive_support_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'hive-support' ),
+			'main-menu' => esc_html__( 'Primary', 'hive-support' ),
 		)
 	);
 
@@ -134,25 +134,16 @@ function hive_support_widgets_init() {
 }
 add_action( 'widgets_init', 'hive_support_widgets_init' );
 
-/**
- * Enqueue scripts and styles.
- */
-function hive_support_scripts() {
-	wp_enqueue_style( 'hive-support-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'hive-support-style', 'rtl', 'replace' );
-
-	wp_enqueue_script( 'hive-support-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'hive_support_scripts' );
 
 /**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Enqueue Style and Js file.
+ */
+require get_template_directory() . '/inc/enqueue.php';
 
 /**
  * Custom template tags for this theme.
@@ -176,3 +167,30 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// let's add "*active*" as a class to the li
+
+// add_filter('nav_menu_css_class', 'special_nav_class', 10, 2);
+// function special_nav_class($classes, $item)
+// {
+// 	if (in_array('current-menu-item', $classes)) {
+// 		$classes[] = 'active ';
+// 	}
+// 	return $classes;
+// }
+
+// function add_search_form($items, $args)
+// {
+// 	if ($args->theme_location == 'main-menu') {
+// 		$items .= '<li class="menu-item">'
+// 			. '<form role="search" method="get" class="search-form" action="' . home_url('/') . '">'
+// 			. '<label>'
+// 			. '<span class="screen-reader-text">' . _x('Search for:', 'label') . '</span>'
+// 			. '<input type="search" class="search-field" placeholder="' . esc_attr_x('Search …', 'placeholder') . '" value="' . get_search_query() . '" name="s" title="' . esc_attr_x('Search for:', 'label') . '" />'
+// 			. '</label>'
+// 			. '<input type="submit" class="search-submit" value="' . esc_attr_x('Search', 'submit button') . '" />'
+// 			. '</form>'
+// 			. '</li>';
+// 	}
+// 	return $items;
+// }
+// add_filter('wp_nav_menu_items', 'add_search_form', 10, 2);

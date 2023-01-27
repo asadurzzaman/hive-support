@@ -1,0 +1,123 @@
+/* Tabs Design */
+
+.tabs,
+.tab-parents,
+.tabs-two,
+.tabs-three,
+.tabs-four {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li,
+    .tab-list {
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--light-color);
+        line-height: 28px;
+        cursor: pointer;
+        @include transition(300ms);
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 0%;
+            left: 50%;
+            @include transform(translateX(-50%));
+            bottom: 0;
+            background-color: var(--main-color-one);
+            @include transition(.3s);
+        }
+        &.active {
+            color: var(--main-color-one);
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.tabs-two {
+    li,
+    .tab-list {
+        &::before {
+            display: none;
+        }
+    }
+}
+
+
+/* Job Tabs Css */
+
+.myJob-tabs {
+    .tabs,
+    .tabs-two,
+    .tabs-three,
+    .tabs-four {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px 30px;
+        @include responsive(xxs) {
+            gap: 10px 20px;
+        }
+        li {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--paragraph-color);
+            position: relative;
+            padding-bottom: 5px;
+            @include responsive(xxs) {
+                padding-bottom: 2px;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                height: 2px;
+                width: 0%;
+                left: 50%;
+                @include transform(translateX(-50%));
+                bottom: 0;
+                background-color: var(--main-color-one);
+                @include transition(.3s);
+            }
+            &.active {
+                color: var(--main-color-one);
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.tab-content-item,
+.tab-content-item-two,
+.tab-content-item2,
+.tab-content-item-three,
+.tab-content-item-four {
+    display: none;
+}
+
+.tab-content-item.active,
+.tab-content-item-two.active,
+.tab-content-item2.active,
+.tab-content-item-three.active,
+.tab-content-item-four.active {
+    display: block;
+    animation: 1s fade-effects;
+}
+
+@keyframes fade-effects {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

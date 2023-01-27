@@ -1,0 +1,96 @@
+/* Policy Css */
+
+.hive_policy {
+    max-width: 1050px;
+    background-color: var(--white);
+    padding: 30px;
+    margin-inline: auto;
+    @include responsive(lg) {
+        padding: 20px;
+    }
+    @include responsive(allPhone) {
+        padding: 20px;
+    }
+    &__title {
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: var(--heading-color);
+        @include responsive(allPhone) {
+            font-size: 32px;
+        }
+        @include responsive(xs) {
+            font-size: 28px;
+        }
+        @include responsive(xxs) {
+            font-size: 26px;
+        }
+        @include responsive(vxxs) {
+            font-size: 24px;
+        }
+    }
+    &__single {
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+        &__title {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--heading-color);
+            @include responsive(xxs) {
+                font-size: 22px;
+            }
+            @include responsive(vxxs) {
+                font-size: 20px;
+            }
+        }
+        &__para {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 26px;
+            color: var(--paragraph-color);
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+            @include responsive(xxs) {
+                font-size: 15px;
+            }
+            @include responsive(vxxs) {
+                font-size: 14px;
+            }
+        }
+        &__list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li {
+                padding-left: 30px;
+                display: flex;
+                align-items: flex-start;
+                position: relative;
+                font-size: 16px;
+                line-height: 20px;
+                @include responsive(xxs) {
+                    font-size: 15px;
+                }
+                @include responsive(vxxs) {
+                    font-size: 14px;
+                }
+                &:not(:last-child) {
+                    margin-bottom: 12px;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 6px;
+                    left: 10px;
+                    height: 7px;
+                    width: 7px;
+                    background-color: var(--paragraph-color);
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}

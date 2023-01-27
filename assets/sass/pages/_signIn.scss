@@ -1,0 +1,26 @@
+/* SignIn SignUp Css */
+
+.hive_signIn__wrapper {
+    max-width: 450px;
+    margin-inline: auto;
+    background-color: var(--white);
+    padding: 20px;
+    &.signUp__wrapper {
+        max-width: 600px;
+    }
+}
+
+.hive_signIn {
+    &__title {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: var(--heading-color);
+    }
+    &__para {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.3;
+        color: var(--paragraph-color);
+    }
+}

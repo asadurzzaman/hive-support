@@ -1,0 +1,54 @@
+/* Affiliate Banner Css */
+
+.hive_affiliatebanner {
+    &__subtitle {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.2;
+        color: var(--paragraph-color);
+        margin-bottom: 10px;
+        display: block;
+        @include responsive(xs) {
+            font-size: 18px;
+        }
+        @include responsive(vxxs) {
+            font-size: 16px;
+        }
+    }
+    &__title {
+        font-size: 68px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: var(--heading-color);
+        &:hover {
+            color: var(--main-color-one);
+        }
+        @include responsive(xxl) {
+            font-size: 64px;
+            line-height: 1.2;
+        }
+        @include responsive(xl) {
+            font-size: 56px;
+            line-height: 1.2;
+        }
+        @include responsive(lg) {
+            font-size: 45px;
+        }
+        @include responsive(allPhone) {
+            font-size: 48px;
+            line-height: 1.2;
+        }
+        @include responsive(sm) {
+            font-size: 45px;
+        }
+        @include responsive(xs) {
+            font-size: 36px;
+        }
+        @include responsive(xxs) {
+            font-size: 32px;
+        }
+        @include responsive(vxxs) {
+            font-size: 26px;
+        }
+    }
+}

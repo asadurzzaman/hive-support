@@ -1,0 +1,60 @@
+/*
+Theme Name: Hive Support
+Theme URI: 
+Author: 
+Author URI: 
+Description: Hive Support is a Wordpress Plugin website template
+Version: 1.0.0
+*/
+
+//== Abstract page
+@import "abstracts/mixins";
+@import "abstracts/variables";
+//== Global page
+@import "base/global";
+//== Components
+@import "components/button";
+@import "components/back_top";
+@import "components/section_title";
+@import "components/nice_selects";
+@import "components/select2";
+@import "components/checkbox";
+@import "components/custom_radio";
+@import "components/custom_switch";
+@import "components/slider_custom";
+@import "components/faq";
+@import "components/form";
+@import "components/tab";
+@import "components/slider_custom";
+@import "components/countdown";
+@import "components/mouse_cursor";
+//== layout Pages
+@import "layout/navbar";
+@import "layout/footer";
+// Section page
+@import "pages/banner";
+@import "pages/provide";
+@import "pages/automation";
+@import "pages/performance";
+@import "pages/experience";
+@import "pages/testimonial";
+@import "pages/hive_pricing";
+@import "pages/newsletter";
+@import "pages/contact";
+@import "pages/policy";
+@import "pages/blog";
+@import "pages/supportTicket";
+@import "pages/supportPortal";
+@import "pages/affiliate_banner";
+@import "pages/affiliate_promo";
+@import "pages/affiliate_work";
+@import "pages/signIn";
+@import "pages/ltd_banner";
+@import "pages/ltd_gaurantee";
+@import "pages/ltd_feature";
+@import "pages/ltd_business";
+@import "pages/ltd_itegration";
+@import "pages/ltd_solutions";
+
+// Dashboard 
+@import "pages/dashboard";

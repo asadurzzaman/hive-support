@@ -1,0 +1,12 @@
+/* Experience css */
+.experience_area {
+    overflow: hidden;
+}
+.single_experience{
+    &__thumb {
+        &__border {
+            padding: 20px;
+            background-color: rgba(var(--main-color-one-rgb), .05);
+        }
+    }
+}

@@ -1,0 +1,121 @@
+/*---------------------------------------
+    Faq Css
+---------------------------------------*/
+
+.hive_faq_contents {
+    &.colum_count2 {
+        column-count: 2;
+        @include responsive(lg) {
+            column-count: 1;
+        }
+        @include responsive(allPhone) {
+            column-count: 1;
+        }
+    }
+    .hive_faq_item {
+        padding: 0;
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        background-color: var(--white);
+        &.open {
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: $white;
+            padding: 0px;
+            @include box-shadow(0px, 2px, 0px, 3px var(--main-color-one));
+            border: 0;
+            .hive_faq_title {
+                border-radius: 0;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+                &::after {
+                    content: "\f068";
+                    background-color: var(--main-color-one);
+                    color: var(--white);
+                    // @include transform(translateY(-50%) rotate(180deg));
+                }
+            }
+        }
+        &.active {
+            .hive_faq_panel {
+                display: block;
+            }
+        }
+        &:not(:first-child) {
+            margin-top: 24px;
+        }
+        .hive_faq_title {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 22px;
+            color: var(--heading-color);
+            font-family: var(--heading-font);
+            padding: 20px;
+            background: none;
+            border-radius: 10px;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            @include transition(300ms);
+            margin-right: 30px;
+            background-color: var(--white);
+            &::after {
+                @include fontawesomeIcon("\2b");
+                position: absolute;
+                right: -10px;
+                top: 50%;
+                transform: translateY(-50%);
+                @include transition(300ms);
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                background-color: var(--section-bg-2);
+
+            }
+        }
+        .hive_faq_panel {
+            padding: 20px;
+            display: none;
+            border-top: 1px solid var(--border-color);
+            .hive_faq_para {
+                font-size: 15px;
+                line-height: 26px;
+                color: var(--paragraph-color);
+                @include responsive(sm) {
+                    font-size: 15px;
+                }
+                @include responsive(vxxs) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+
+.hive_faq_question {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 8;
+    &__subtitle {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.2;
+        color: var(--paragraph-color);
+        display: block;
+    }
+    &__title {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: var(--heading-color);
+    }
+}
+

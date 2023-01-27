@@ -1,0 +1,11 @@
+/* Automation css */
+.automation_area  {
+    overflow: hidden;
+}
+.single_automation {
+    &__thumb {
+        img {
+            border-radius: 20px;
+        }
+    }
+}

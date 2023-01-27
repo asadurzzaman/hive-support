@@ -1,0 +1,129 @@
+/* Newsletter Css */
+.newsletter_area {
+    overflow: hidden;
+}
+.newsletter_wrapper {
+    max-width: 700px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    &__padding {
+        padding: 50px;
+        @include responsive(xxs) {
+            padding: 30px;
+        }
+        @include responsive(vxxs) {
+            padding: 30px 20px;
+        }
+    }
+    &__shapes {
+        &__custom {
+            position: absolute;
+            height: 80px;
+            width: 80px;
+            right: 0px;
+            top: -40px;
+            background-color: rgba($white, .1);
+            transform: rotate(45deg);
+            border-radius: 10px;
+            z-index: -1;
+            animation: 20s leftRightMoving linear infinite;
+        }
+        img {
+            position: absolute;
+            z-index: 1;
+            @include responsive(xxs) {
+                display: none;
+            }
+            &:nth-child(1) {
+                left: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            &:nth-child(2) {
+                right: 30px;
+                top: 30px;
+            }
+        }
+    }
+}
+
+.newsletter_bg {
+    background-color: var(--heading-color);
+}
+
+.newsletter_contents {
+    &__title {
+        font-size: 28px;
+        color: $white;
+        font-weight: 500;
+        margin: -5px 0 0;
+    }
+    &__para {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: rgba($white, .7);
+    }
+    &__form {
+        .single-input {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            .form--control {
+                height: 55px;
+                border: 1px solid rgba($steam-color, .7);
+                background-color: $white;
+                color: var(--light-color);
+                outline: none;
+                @include box-shadow(0, 0, 10px, rgba($white, .1));
+                @include transition(.3s);
+                padding: 20px;
+                width: 100%;
+                padding-right: 100px;
+                &::placeholder {
+                    color: var(--light-color);
+                }
+                &:focus {
+                    @include box-shadow(0, 0, 10px, rgba(var(--main-color-one-rgb), .1));
+                    border: rgba(var(--main-color-one-rgb), .3);
+                }
+            }
+            button {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                height: 100%;
+                border: 0;
+                outline: none;
+                padding: 5px 20px;
+                background-color: var(--main-color-one);
+                color: $white;
+            }
+        }
+    }
+}
+
+@keyframes leftRightMoving {
+    0% {
+        right: -40px;
+        top: 0%;
+    }
+    25% {
+        right: -40px;
+        top: 85%;
+    }
+    50% {
+        right: 94%;
+        top: 85%;
+    }
+    75% {
+        right: 94%;
+        top: -40px;
+    }
+    100% {
+        right: -40px;   
+        top: -40px;     
+    }
+}

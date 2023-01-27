@@ -1,0 +1,98 @@
+/* Contact Css */
+
+.hive_contact {
+    &__title {
+        font-size: 28px;
+        margin: -4px 0 0;
+        line-height: 1.2;
+        font-weight: 600;
+    }
+    &__para {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        color: var(--paragraph-color);
+    }
+    &__single {
+        background-color: var(--white);
+        padding: 20px;
+    }
+    &__card {
+        &__flex {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+        &__item {
+            background-color: var(--white);
+            padding: 30px;
+            width: calc(100% / 2 - 12px);
+            @include responsive(xxs) {
+                width: 100%;
+            }
+            @include responsive(vxxs) {
+                padding: 20px;
+            }
+        }
+        &__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            width: 50px;
+            background-color: var(--section-bg-2);
+            color: var(--white);
+            font-size: 24px;
+            color: var(--paragraph-color);
+            border-radius: 50%;
+        }
+        &__para {
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: 400;
+            color: var(--paragraph-color);
+            word-break: break-all;
+            a {
+                display: inline-block;
+                transition: all .2s;
+            }
+            &:hover{
+                a {
+                    color: var(--main-color-one);
+                }
+            }
+        }
+    }
+    &_map {
+        iframe {
+            border-radius: 10px;
+            height: 435px;
+            @include responsive(xl) {
+                height: 415px;
+            }
+            @include responsive(lg) {
+                height: 415px;
+            }
+            @include responsive(allPhone) {
+                height: 350px;
+            }
+            @include responsive(xxs) {
+                height: 300px;
+            }
+            @include responsive(vxxs) {
+                height: 220px;
+            }
+        }
+    }
+}
+
+.center-text {
+    .hive_contact {
+        &__card {
+            &__icon {
+                margin-inline: auto;
+            }
+        }
+    }
+}

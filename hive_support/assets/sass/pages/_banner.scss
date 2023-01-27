@@ -1,0 +1,172 @@
+/* Banner  */
+
+.hive_banner_area {
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    overflow: hidden;
+    padding: 200px 0 100px;
+    @include responsive(allPhone) {
+        padding: 130px 0 70px;
+    }
+}
+
+.hive_banner__bg {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 150px;
+        height: calc(100% + 900px);
+        width: calc(100% + 900px);
+        background-color: var(--main-color-one);
+        border-radius: 50%;
+        @include responsive(allPhone) {
+            bottom: 70px;
+        }
+    }
+}
+.hive_banner {
+    &__shape1 {
+        position: absolute;
+        top: 20%;
+        left: 15%;
+        height: 32px;
+        width: 32px;
+        background-color: unset;
+        border: 1px solid rgba(var(--white-rgb), .1);
+        border-radius: 5px;
+        transform: rotate(45deg);
+        z-index: 1;
+    }
+    &__shape2 {
+        position: absolute;
+        top: 10%;
+        right: 15%;
+        height: 24px;
+        width: 24px;
+        background-color: unset;
+        border: 1px solid rgba(var(--white-rgb), .1);
+        border-radius: 50%;
+        z-index: 1;
+    }
+}
+.hive_banner {
+    position: relative;
+    z-index: 2;
+    &.white {
+        .hive_banner {
+            &__content {
+                &__title {
+                    color: var(--white);
+                }
+                &__para {
+                    color: rgba(var(--white-rgb), .8);
+                }
+            }
+        }
+    }
+    &__btn {
+        .hive_btn {
+            padding: 12px 65px;
+            @include responsive(xs) {
+                padding: 10px 35px;
+                font-size: 15px;
+            }
+            @include responsive(vxxs) {
+                padding: 7px 25px;
+                font-size: 14px;
+            }
+        }
+    }
+    &__content {
+        position: relative;
+        z-index: 5;
+        max-width: 880px;
+        margin-inline: auto;
+        &__title {
+            font-size: 70px;
+            line-height: 1.1;
+            font-weight: 600;
+            margin: -12px 0 0;
+            position: relative;
+            &__span {
+                text-decoration: underline;
+            }
+            @include responsive(xl) {
+                font-size: 48px;
+                line-height: 50px;
+            }
+            @include responsive(lg) {
+                font-size: 42px;
+                line-height: 50px;
+            }
+            @include responsive(allPhone) {
+                font-size: 32px;
+                line-height: 1.2;
+            }
+            @include responsive(xs) {
+                font-size: 28px;
+            }
+            @include responsive(vxxs) {
+                font-size: 26px;
+            }
+            &:hover {
+                color: var(--main-color-one);
+            }
+        }
+        &__para {
+            font-size: 18px;
+            color: var(--paragraph-color);
+            font-weight: 400;
+            line-height: 28px;
+            max-width: 700px;
+            margin-inline: auto;
+            @include responsive(xxs) {
+                font-size: 16px;
+                line-height: 26px;
+            }
+            @include responsive(vxxs) {
+                font-size: 15px;
+            }
+        }
+    }
+    &__thumb {
+        position: relative;
+        img {
+            border-radius: 20px;
+            border: 5px solid var(--heading-color);
+        }
+        &__shape1 {
+            position: absolute;
+            left: -100px;
+            top: 50px;
+            height: 140px;
+            width: 140px;
+            overflow: hidden;
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -70px;
+                left: 0px;
+                width: 140px;
+                height: 140px;
+                border-top-right-radius: 50%;
+                border-top-left-radius: 50%;
+                border-bottom: 140px solid rgba(var(--white-rgb), .05);
+            }
+        }
+        &__shape2 {
+            position: absolute;
+            right: -70px;
+            top: -70px;
+            height: 140px;
+            width: 140px;
+            border-radius: 50%;
+            background-color: rgba(var(--white-rgb), .05);
+        }
+    }
+}
+

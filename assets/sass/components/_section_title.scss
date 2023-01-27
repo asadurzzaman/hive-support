@@ -1,0 +1,79 @@
+/*-------------------------
+    Section Title
+-------------------------*/
+
+.section_title {
+    max-width: 750px;
+    margin: auto;
+    &.text_left {
+        text-align: left;
+    }
+    &.white-color {
+        color: var(--white);
+        .title {
+            color: var(--white);
+        }
+    }
+    &.center-text {
+        text-align: center;
+    }
+    &.section_flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin: unset;
+        max-width: 100%;
+        .title {
+            flex-basis: 55%;
+            @include responsive(allPhone) {
+                flex-basis: 70%;
+            }
+        }
+    }
+    .title {
+        font-size: 42px;
+        font-weight: 500;
+        line-height: 1.2;
+        color: var(--heading-color);
+        font-family: var(--heading-font);
+        position: relative;
+        margin: -6px 0 0;
+        @include responsive(xxl) {
+            font-size: 45px;
+        }
+        @include responsive(xl) {
+            font-size: 42px;
+        }
+        @include responsive(lg) {
+            font-size: 36px;
+        }
+        @include responsive(allPhone) {
+            font-size: 28px;
+            line-height: 32px;
+        }
+        @include responsive(xs) {
+            font-size: 26px;
+            line-height: 30px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 3;
+        }
+        @include responsive(vxxs) {
+            font-size: 24px;
+            line-height: 28px;
+        }
+    }
+    .section_para {
+        font-size: 18px;
+        line-height: 28px;
+        margin-top: 20px;
+        color: var(--paragraph-color);
+        @include responsive(sm) {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+}

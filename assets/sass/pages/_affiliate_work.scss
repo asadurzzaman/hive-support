@@ -1,0 +1,56 @@
+/* Hive Affiliate Promo Css */
+
+.hive_affiliateWork {
+    &.white {
+        .hive_affiliateWork {
+            &__thumb {
+                background-color: var(--white);
+                color: var(--main-color-one);
+            }
+            &__title {
+                color: var(--white);
+            }
+            &__para {
+                color: rgba(var(--white-rgb), .8);
+            }
+        }
+    }
+    &__flex {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    &__thumb {
+        font-size: 60px;
+        img {
+            max-width: 60px;
+        }
+    }
+    &__contents {
+        flex-grow: 1;
+    }
+    &__title {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: var(--heading-color);
+        @include responsive(lg) {
+            font-size: 20px;
+        }
+        @include responsive(sm) {
+            font-size: 20px;
+        }
+    }
+    &__para {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.4;
+        color: var(--paragraph-color);
+        @include responsive(lg) {
+            font-size: 15px;
+        }
+        @include responsive(sm) {
+            font-size: 15px;
+        }
+    }
+}

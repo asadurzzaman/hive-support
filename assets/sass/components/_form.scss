@@ -1,0 +1,182 @@
+/* Custom Form */
+
+.input-form {}
+
+.single-flex-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-grow: 1;
+    @include responsive(xxs) {
+        flex-wrap: wrap;
+    }
+    .single-input {
+        @include responsive(xxs) {
+            flex-basis: 100% !important;
+        }
+    }
+}
+
+.custom-form {
+    .single-flex-input {
+        &:not(:first-child) {
+            margin-top: 24px;
+        }
+        .single-input,
+        .form-group {
+            margin-top: 0 !important;
+            flex: 1;
+            .js_nice_select {
+                width: 100%;
+            }
+        }
+    }
+    .single-input,
+    .form-group {
+        width: 100%;
+        &:not(:first-child) {
+            margin-top: 24px;
+        }
+        .label-title {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--heading-color);
+            @include responsive(xxs) {
+                font-size: 15px;
+            }
+            @include responsive(vxxs) {
+                font-size: 14px;
+            }
+        }
+        .iti {
+            width: 100%;
+        }
+        .form--control,
+        .form-control {
+            &.input-padding-left {
+                padding-left: 45px;
+            }
+            &#phone {
+                width: 100%;
+                padding-left: 50px;
+            }
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+                -moz-appearance: textfield;
+            }
+            -moz-appearance: textfield;
+            width: 100%;
+            height: 55px;
+            line-height: 55px;
+            padding: 0 15px;
+            border: 1px solid var(--border-color);
+            outline: none;
+            background-color: var(--white);
+            color: var(--paragraph-color);
+            @include transition(300ms);
+            @include box-shadow(0, 0, 10px, rgba($white, .1));
+            &:focus {
+                border-color: rgba(var(--main-color-one-rgb), .3);
+                @include box-shadow(0, 0, 10px, rgba(var(--main-color-one-rgb), .1));
+            }
+            @include responsive(xxs) {
+                font-size: 15px;
+            }
+            @include responsive(vxxs) {
+                font-size: 14px;
+            }
+        }
+        &.input-padding-left {
+            .form--control,
+            .form-control {
+                padding-left: 45px;
+            }
+        }
+        .input-icon {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+        }
+        textarea {
+            height: auto !important;
+        }
+        &-icon {
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                height: 55px;
+                width: 2px;
+                background-color: #f3f3f3;
+                bottom: 0;
+                left: 40px;
+            }
+            .form--control,
+            .form-control {
+                padding-left: 50px;
+                position: relative;
+            }
+        }
+    }
+    .submit-btn {
+        margin-top: 25px;
+    }
+}
+
+textarea {
+    height: auto !important;
+}
+
+.submit-btn {
+    border: 2px solid var(--main-color-one);
+    background-color: var(--main-color-one);
+    color: $white;
+    padding: 10px 25px;
+    font-size: 15px;
+    line-height: 22px;
+    @include transition(300ms);
+    &:hover {
+        background-color: rgba(var(--main-color-one-rgb), .9);
+    }
+}
+
+.forgot-password {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--heading-color);
+    transition: all .3s;
+    &:hover {
+        color: var(--main-color-one);
+    }
+}
+/* Toggle Password hide Show */
+
+.single-input {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    bottom: 13px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.hide-icon {
+    display: none;
+}
+
+.toggle-password.show-pass .hide-icon {
+    display: block;
+}
+
+.toggle-password.show-pass .show-icon {
+    display: none;
+}

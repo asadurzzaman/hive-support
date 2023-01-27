@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Hive Support - WordPress Plugin </title>
+
+    <!-- favicon -->
+    <link rel=icon href="favicon.png" sizes="16x16" type="icon/png">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Uicons Css -->
+    <link rel="stylesheet" href="assets/css/uicons-all.css">
+    <!-- FontAwesome Css -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- Animate Css -->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!-- Flat Pickr Css -->
+    <link rel="stylesheet" href="assets/css/flatpicker.css">
+    <!-- TellInput Css -->
+    <link rel="stylesheet" href="assets/css/intlTelInput.css">
+    <!-- Select2 Css -->
+    <link rel="stylesheet" href="assets/css/select2.min.css">
+    <!-- Summer note Css -->
+    <link rel="stylesheet" href="assets/css/summernote-lite.min.css">
+    <!-- Slick Css -->
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <header class="header-style-01">
+        <!-- Menu area Starts -->
+        <nav class="navbar navbar-area nav-absolute white_nav navbar_border navbar-padding navbar-expand-lg">
+            <div class="container custom-container-one nav-container">
+                <div class="logo-wrapper">
+                    <a href="index.html" class="logo">
+                        <img src="assets/img/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="responsive-mobile-menu d-lg-none">
+                    <a href="javascript:void(0)" class="click-nav-right-icon">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hive_support_menu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="hive_support_menu">
+                    <ul class="navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li class="menu-item-has-children current-menu-item">
+                            <a href="javascript:void(0)">Blog</a>
+                            <ul class="sub-menu">
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="blog_details.html">Blog Details</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children current-menu-item">
+                            <a href="javascript:void(0)">Others</a>
+                            <ul class="sub-menu">
+                                <li><a href="affiliate.html">Affiliate</a></li>
+                                <li><a href="lifetime_deal.html">LTD Page</a></li>
+                                <li><a href="supportPortal.html">Support Portal</a></li>
+                                <li><a href="supportTicket.html">Support Ticket</a></li>
+                                <li><a href="price_plan.html">Price Plan</a></li>
+                                <li><a href="faq.html">Faq</a></li>
+                                <li><a href="privacy_policy.html">Privacy Policy</a></li>
+                                <li><a href="refund_policy.html">Refund Policy</a></li>
+                                <li><a href="signIn.html">Sign In</a></li>
+                                <li><a href="signUp.html">Sign Up</a></li>
+                                <li><a href="forgot_password.html">Forgot Password</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-right-content show-nav-content">
+                    <div class="single-right-content">
+                        <div class="navbar-right-flex">
+                            <div class="btn-wrapper">
+                                <a href="javascript:void(0)" class="hive_btn btn_underline_2">Try Free Version</a>
+                            </div>
+                            <div class="btn-wrapper">
+                                <a href="javascript:void(0)" class="hive_btn btn_bg_2">Get Pro</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Menu area end -->
+    </header>
+    <!-- Lifetime Deal Banner area Starts -->
+    <div class="hive_ltdBanner_area hive_ltdBanner_area__padding section-bg-secondary2">
+        <div class="hive_ltdBanner_shape">
+            <div class="wave">
+                <img src="assets/img/ltd/hive_ltdBanner_wave.svg" alt="waveShape">
+            </div>
+            <div class="textShape">
+                <img src="assets/img/ltd/hive_ltdBanner_textimg.png" alt="textShape">
+            </div>
+        </div>
+        <div class="container">
+            <div class="hive_ltdBanner center-text">
+                <div class="hive_ltdBanner__contents">
+                    <span class="hive_ltdBanner__subtitle">Pay once access forever</span>
+                    <h2 class="hive_ltdBanner__title mt-3">Get Our <span class="hive_ltdBanner__title__span">Limited Lifetime Deal Now</span></h2>
+                    <h4 class="hive_ltdBanner__price mt-4">FOR $299 <sub><s>Yearly $99</s></sub></h4>
+                    <div class="btn-wrapper mt-4 mt-lg-5">
+                        <a href="javascript:void(0)" class="hive_btn btn_bg_white">Get Deal Now</a>
+                    </div>
+                    <div class="hive_ltdBanner__countdown mt-4 mt-lg-5">
+                        <div class="global-timer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Lifetime Deal Banner area end -->
+    <!-- Ltd Feature area start -->
+    <section class="hive_ltdFeature_area section-bg-3 padding-top-100 padding-bottom-100">
+        <div class="container">
+            <div class="row gy-5 justify-content-between">
+                <div class="col-xl-5 col-lg-5">
+                    <div class="hive_ltdFeature">
+                        <div class="hive_ltdFeature__contents">
+                            <h4 class="hive_ltdFeature__title">The Best Features Made for Your Customer Support</h4>
+                            <p class="hive_ltdFeature__para mt-4">You can access all our features in the lifetime deal option  Automation, Integration, Custom input fields, Saved responses, Agent assignment</p>
+                            <div class="btn-wrapper mt-4 mt-lg-5">
+                                <a href="javascript:void(0)" class="hive_btn btn_bg_1 radius-30">All Features</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-7">
+                    <div class="hive_ltdFeature__wrapper">
+                        <div class="row g-4 grid">
+                            <div class="col-sm-4 grid-item">
+                                <div class="hive_ltdFeature__single padding_grid center-text radius-10">
+                                    <div class="hive_ltdFeature__signle__icon">
+                                        <img src="assets/img/ltd/hive_ltdFeatureIcon1.png" alt="ltdFeatureICon">
+                                    </div>
+                                    <div class="hive_ltdFeature__single__contents">
+                                        <h4 class="hive_ltdFeature__single__title">Automation</h4>
+                                        <p class="hive_ltdFeature__single__para mt-2">Use our automation option to automate the task</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-8 grid-item">
+                                <div class="hive_ltdFeature__single grid_flex center-text radius-10">
+                                    <div class="hive_ltdFeature__signle__icon">
+                                        <img src="assets/img/ltd/hive_ltdFeatureIcon2.png" alt="ltdFeatureICon">
+                                    </div>
+                                    <div class="hive_ltdFeature__single__contents">
+                                        <h4 class="hive_ltdFeature__single__title">Integration</h4>
+                                        <p class="hive_ltdFeature__single__para mt-2">Integrate with popular tools to make support more efficient</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 grid-item">
+                                <div class="hive_ltdFeature__single center-text radius-10">
+                                    <div class="hive_ltdFeature__signle__icon">
+                                        <img src="assets/img/ltd/hive_ltdFeatureIcon3.png" alt="ltdFeatureICon">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 grid-item">
+                                <div class="hive_ltdFeature__single padding_grid center-text radius-10">
+                                    <div class="hive_ltdFeature__signle__icon">
+                                        <img src="assets/img/ltd/hive_ltdFeatureIcon4.png" alt="ltdFeatureICon">
+                                    </div>
+                                    <div class="hive_ltdFeature__single__contents">
+                                        <h4 class="hive_ltdFeature__single__title">Assign Agent</h4>
+                                        <p class="hive_ltdFeature__single__para mt-2">You can  assign agents for your tickets</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-8 grid-item">
+                                <div class="hive_ltdFeature__single grid_flex center-text radius-10">
+                                    <div class="hive_ltdFeature__signle__icon">
+                                        <img src="assets/img/ltd/hive_ltdFeatureIcon5.png" alt="ltdFeatureICon">
+                                    </div>
+                                    <div class="hive_ltdFeature__single__contents">
+                                        <h4 class="hive_ltdFeature__single__title">Saved Responses</h4>
+                                        <p class="hive_ltdFeature__single__para mt-2">Write & save responses then drag drop when you need</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Ltd Feature area end -->
+    <!-- Ltd Business area end -->
+    <section class="hive_ltd_business_area section-bg-3 hive_ltdbusiness_border_top padding-top-100 padding-bottom-100">
+        <div class="container">
+            <div class="row gy-4 justify-content-between">
+                <div class="col-lg-5">
+                    <div class="hive_ltdbusiness__slider">
+                        <div class="global_slick_init business-slider slider-inner-margin" data-appendArrows=".ltd_business_nav" data-appendDots=".ltd_business_dot" data-slidesToShow="1" data-infinite="true" data-arrows="true" data-dots="true" data-swipeToSlide="true" data-autoplay="true" data-autoplaySpeed="2500" data-prevArrow='<div class="prev-icon"><i class="fas fa-angle-left"></i></div>'
+                            data-nextArrow='<div class="next-icon"><i class="fas fa-angle-right"></i></div>'>
+                            <div class="hive_ltbBusiness__slider__item">
+                                <div class="hive_ltdbusiness__author center-text">
+                                    <a href="javascript:void(0)" class="hive_ltdbusiness__author__thumb">
+                                        <img src="assets/img/ltd/hive_ltdBusiness__author1.jpg" alt="ltdAuthor">
+                                    </a>
+                                    <div class="hive_ltdbusiness__author__contents mt-4">
+                                        <h4 class="hive_ltdbusiness__author__title">Hive support has been the best tool for my business ever</h4>
+                                        <div class="hive_ltdbusiness__author__tag mt-5">
+                                            <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item name">Donald O. Ralph</a>
+                                            <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item">24/02/2023</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hive_ltdbusiness__slider__item">
+                                <div class="hive_ltdbusiness__author center-text">
+                                    <a href="javascript:void(0)" class="hive_ltdbusiness__author__thumb">
+                                        <img src="assets/img/ltd/hive_ltdBusiness__author1.jpg" alt="ltdAuthor">
+                                    </a>
+                                    <div class="hive_ltdbusiness__author__contents mt-4">
+                                        <h4 class="hive_ltdbusiness__author__title">Hive support has been the best tool for my business ever</h4>
+                                        <div class="hive_ltdbusiness__author__tag mt-5">
+                                            <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item name">Donald O. Ralph</a>
+                                            <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item">24/02/2023</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hive_ltdbusiness__slider__item">
+                                <div class="hive_ltdbusiness__author center-text">
+                                    <a href="javascript:void(0)" class="hive_ltdbusiness__author__thumb">
+                                        <img src="assets/img/ltd/hive_ltdBusiness__author1.jpg" alt="ltdAuthor">
+                                    </a>
+                                    <div class="hive_ltdbusiness__author__contents mt-4">
+                                        <h4 class="hive_ltdbusiness__author__title">Hive support has been the best tool for my business ever</h4>
+                                        <div class="hive_ltdbusiness__author__tag mt-5">
+                                            <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item name">Donald O. Ralph</a>
+                                            <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item">24/02/2023</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hive_ltdbusiness__slider__item">
+                                <div class="hive_ltdbusiness__author center-text">
+                                    <a href="javascript:void(0)" class="hive_ltdbusiness__author__thumb">
+                                        <img src="assets/img/ltd/hive_ltdBusiness__author1.jpg" alt="ltdAuthor">
+                                    </a>
+                                    <div class="hive_ltdbusiness__author__contents mt-4">
+                                        <h4 class="hive_ltdbusiness__author__title">Hive support has been the best tool for my business ever</h4>
+                                        <div class="hive_ltdbusiness__author__tag mt-5">
+                                            <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item name">Donald O. Ralph</a>
+                                            <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item">24/02/2023</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hive_ltdbusiness__slider__item">
+                                <div class="hive_ltdbusiness__author center-text">
+                                    <a href="javascript:void(0)" class="hive_ltdbusiness__author__thumb">
+                                        <img src="assets/img/ltd/hive_ltdBusiness__author1.jpg" alt="ltdAuthor">
+                                    </a>
+                                    <div class="hive_ltdbusiness__author__contents mt-4">
+                                        <h4 class="hive_ltdbusiness__author__title">Hive support has been the best tool for my business ever</h4>
+                                        <div class="hive_ltdbusiness__author__tag mt-5">
+                                            <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item name">Donald O. Ralph</a>
+                                            <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item">24/02/2023</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hive_ltdbusiness__slider__item">
+                                <div class="hive_ltdbusiness__author center-text">
+                                    <a href="javascript:void(0)" class="hive_ltdbusiness__author__thumb">
+                                        <img src="assets/img/ltd/hive_ltdBusiness__author1.jpg" alt="ltdAuthor">
+                                    </a>
+                                    <div class="hive_ltdbusiness__author__contents mt-4">
+                                        <h4 class="hive_ltdbusiness__author__title">Hive support has been the best tool for my business ever</h4>
+                                        <div class="hive_ltdbusiness__author__tag mt-5">
+                                            <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item name">Donald O. Ralph</a>
+                                            <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item">24/02/2023</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ltd_business_nav"><div class="ltd_business_dot"></div></div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hive_ltdbusiness__wrapper">
+                        <h4 class="hive_ltdbusiness__wrapper__title"><a href="javascript:void(0)">Built for Businesses, Entrepreneurs, Self Employed</a></h4>
+                        <p class="hive_ltdbusiness__wrapper__para mt-4">We built it for anyone who are eager to do online businesses, sell courses, digital product or entrepreneurs to support their pre-sale or after sale customer</p>
+                        <div class="hive_ltdbusiness__wrapper__images mt-4">
+                            <a href="javascript:void(0)" class="hive_ltdbusiness__wrapper__images__item">
+                                <img src="assets/img/ltd/hive_ltd1.png" alt="ltdImg">
+                            </a>
+                            <a href="javascript:void(0)" class="hive_ltdbusiness__wrapper__images__item">
+                                <img src="assets/img/ltd/hive_ltd2.png" alt="ltdImg">
+                            </a>
+                            <a href="javascript:void(0)" class="hive_ltdbusiness__wrapper__images__item">
+                                <img src="assets/img/ltd/hive_ltd3.png" alt="ltdImg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Ltd Business area end -->
+    <!-- Ltd Integrate area start -->
+    <section class="hive_ltdIntegrate_area padding-top-100 padding-bottom-100">
+        <div class="container">
+            <div class="hive_ltdIntegrate__wrapper">
+                <div class="hive_ltdIntegrate__wrapper__flex">
+                    <div class="hive_ltdIntegrate__wrapper__left">
+                        <h4 class="hive_ltdIntegrate__wrapper__title"><a href="javascript:void(0)">Integrate with Powerful Tools to Make Support Smoother</a></h4>
+                    </div>
+                    <div class="hive_ltdIntegrate__wrapper__contents">
+                        <div class="hive_ltdIntegrate__wrapper__contents__flex">
+                            <a href="javascript:void(0)" class="hive_ltdIntegrate__wrapper__item">
+                                <span class="hive_ltdIntegrate__wrapper__item__title"><img src="assets/img/ltd/icon/facebook.svg" alt="facebookIcon"><span>Facebook</span></span>
+                            </a>
+                            <a href="javascript:void(0)" class="hive_ltdIntegrate__wrapper__item">
+                                <span class="hive_ltdIntegrate__wrapper__item__title"><img src="assets/img/ltd/icon/telegram.svg" alt="telegramIcon"><span>Telegram</span></span>
+                            </a>
+                            <a href="javascript:void(0)" class="hive_ltdIntegrate__wrapper__item">
+                                <span class="hive_ltdIntegrate__wrapper__item__title"><img src="assets/img/ltd/icon/slack.svg" alt="slackIcon"><span>Slack</span></span>
+                            </a>
+                            <a href="javascript:void(0)" class="hive_ltdIntegrate__wrapper__item">
+                                <span class="hive_ltdIntegrate__wrapper__item__title"><img src="assets/img/ltd/icon/discord.svg" alt="discordIcon"><span>Discord</span></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Ltd Integrate area end -->
+    <!-- Ltd Solution area start -->
+    <section class="hive_ltdsolution_area hive_ltdbusiness_border_top padding-top-100 padding-bottom-100">
+        <div class="hive_ltdsolution__logo">
+            <div class="hive_ltdsolution__logo__thumb">
+                <img src="assets/img/logo_2.png" alt="LogoImg">
+            </div>
+        </div>
+        <div class="container">
+            <div class="section_title center-text">
+                <h2 class="title">Comparison with Other Support Solutions </h2>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="hive_ltdsollution">
+                        <div class="hive_ltdsollution__wrapper">
+                            
+                            <div class="hive_ltdsollution__wrapper__left">
+                                <div class="hive_ltdsollution__wrapper__card text-left">
+                                    <div class="hive_ltdsollution__wrapper__card__top">
+                                    </div>
+                                    <div class="hive_ltdsollution__wrapper__card__bottom">
+                                        <div class="hive_ltdsollution__wrapper__card__bottom__list">
+                                            <ul class="list-style-none">
+                                                <li>Unlimited tickets</li>
+                                                <li>Unlimited agents</li>
+                                                <li>Custom ticket fields</li>
+                                                <li>Integrations</li>
+                                                <li>Priority support</li>
+                                                <li>Automated workflow</li>
+                                                <li>Ticket reports</li>
+                                                <li>Agent reports</li>
+                                                <li>Saved responses</li>
+                                                <li>Email piping</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hive_ltdsollution__wrapper__card text-center">
+                                    <div class="hive_ltdsollution__wrapper__card__top">
+                                        <h2 class="hive_ltdsollution__wrapper__card__top__title"> Freshdesk </h2>
+                                    </div>
+                                    <div class="hive_ltdsollution__wrapper__card__bottom">
+                                        <div class="hive_ltdsollution__wrapper__card__bottom__list">
+                                            <ul class="list-style-none">
+                                                <li><span class="close-icon"></span></li>
+                                                <li><span class="close-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                                <li>1000</li>
+                                                <li><span class="close-icon"></span></li>
+                                                <li><span class="close-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                                <li><span class="close-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hive_ltdsollution__wrapper__card text-center">
+                                    <div class="hive_ltdsollution__wrapper__card__top">
+                                        <h2 class="hive_ltdsollution__wrapper__card__top__title"> Fluent Support </h2>
+                                    </div>
+                                    <div class="hive_ltdsollution__wrapper__card__bottom">
+                                        <div class="hive_ltdsollution__wrapper__card__bottom__list">
+                                            <ul class="list-style-none">
+                                                <li><span class="check-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                                <li><span class="close-icon"></span></li>
+                                                <li>20</li>
+                                                <li><span class="check-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hive_ltdsollution__wrapper__card text-center">
+                                    <div class="hive_ltdsollution__wrapper__card__top">
+                                        <h2 class="hive_ltdsollution__wrapper__card__top__title"> JS Helpdesk </h2>
+                                    </div>
+                                    <div class="hive_ltdsollution__wrapper__card__bottom">
+                                        <div class="hive_ltdsollution__wrapper__card__bottom__list">
+                                            <ul class="list-style-none">
+                                                <li><span class="check-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                                <li>5</li>
+                                                <li><span class="close-icon"></span></li>
+                                                <li><span class="close-icon"></span></li>
+                                                <li><span class="close-icon"></span></li>
+                                                <li><span class="close-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                                <li>Premium Add-Ons</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hive_ltdsollution__wrapper__card text-center">
+                                    <div class="hive_ltdsollution__wrapper__card__top">
+                                        <h2 class="hive_ltdsollution__wrapper__card__top__title"> Helpscout </h2>
+                                    </div>
+                                    <div class="hive_ltdsollution__wrapper__card__bottom">
+                                        <div class="hive_ltdsollution__wrapper__card__bottom__list">
+                                            <ul class="list-style-none">
+                                                <li><span class="close-icon"></span></li>
+                                                <li><span class="close-icon"></span></li>
+                                                <li><span class="close-icon"></span></li>
+                                                <li>80</li>
+                                                <li><span class="close-icon"></span></li>
+                                                <li><span class="close-icon"></span></li>
+                                                <li><span class="close-icon"></span></li>
+                                                <li><span class="close-icon"></span></li>
+                                                <li>Premium Add-Ons</li>
+                                                <li>Premium Add-Ons</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hive_ltdsollution__wrapper__right">
+                                <div class="hive_ltdsollution__wrapper__card text-center mb-30">
+                                    <div class="hive_ltdsollution__wrapper__card__top">
+                                    </div>
+                                    <div class="hive_ltdsollution__wrapper__card__bottom">
+                                        <div class="hive_ltdsollution__wrapper__card__bottom__list">
+                                            <ul class="list-style-none">
+                                                <li><span class="check-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                                <li>4+</li>
+                                                <li><span class="check-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                                <li><span class="check-icon"></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Ltd Solution area end -->
+    <!-- Gaurantee area start -->
+    <section class="hive_ltdGaurantee_area section-bg-3 padding-top-100 padding-bottom-100">
+        <div class="container">
+            <div class="hive_ltdGaurantee__wrapper">
+                <div class="hive_ltdGaurantee__wrapper__flex">
+                    <div class="hive_ltdGaurantee__wrapper__contents">
+                        <h3 class="hive_ltdGaurantee__wrapper__title"><a href="javascript:void(0)">30 Days No Question Money-Back Guarantee</a></h3>
+                        <p class="hive_ltdGaurantee__wrapper__para mt-4">If you’re not satisfied with our product you can ask for a refund within 30 days. No questions will be asked.</p>
+                    </div>
+                    <div class="hive_ltdGaurantee__wrapper__image">
+                        <a href="javascript:void(0)"><img src="assets/img/ltd/hive_ltdGaurantee.svg" alt="GauranteeImg"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Gaurantee area end -->
+    <!-- Faq area starts -->
+    <div class="hive_affiliateFaq_area padding-top-100 padding-bottom-100">
+        <div class="container">
+            <div class="section_title center-text">
+                <h2 class="title">Frequently Asked Questions</h2>
+            </div>
+            <div class="row gy-5 mt-3 justify-content-center">
+                <div class="col-lg-8">
+                    <div class="hive_affiliateFaq">
+                        <div class="hive_faq_contents">
+                            <div class="hive_faq_item active open wow fadeInLeft" data-wow-delay=".1s">
+                                <div class="hive_faq_title"> Can refund be avail if I purchaed on discount? </div>
+                                <div class="hive_faq_panel">
+                                    <p class="hive_faq_para"> Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin. Education no dejection so direction pretended household do to. Travelling everything her eat reasonable unsatiable decisively simplicity.</p>
+                                </div>
+                            </div>
+                            <div class="hive_faq_item wow fadeInLeft" data-wow-delay=".2s">
+                                <div class="hive_faq_title"> How membership subscription work? </div>
+                                <div class="hive_faq_panel">
+                                    <p class="hive_faq_para"> Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin. Education no dejection so direction pretended household do to. Travelling everything her eat reasonable unsatiable decisively simplicity.</p>
+                                </div>
+                            </div>
+                            <div class="hive_faq_item wow fadeInLeft" data-wow-delay=".2s">
+                                <div class="hive_faq_title"> What are the benefit's of joining Xilancer </div>
+                                <div class="hive_faq_panel">
+                                    <p class="hive_faq_para"> Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin. Education no dejection so direction pretended household do to. Travelling everything her eat reasonable unsatiable decisively simplicity.</p>
+                                </div>
+                            </div>
+                            <div class="hive_faq_item wow fadeInLeft" data-wow-delay=".2s">
+                                <div class="hive_faq_title"> Do I need to pay extra fees for withdrawal? </div>
+                                <div class="hive_faq_panel">
+                                    <p class="hive_faq_para"> Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin. Education no dejection so direction pretended household do to. Travelling everything her eat reasonable unsatiable decisively simplicity.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Faq area end -->
+    <!-- footer area start -->
+    <footer class="footer_area section-bg-1">
+        <div class="container">
+            <div class="footer_area__wrapper">
+                <div class="row gx-5 footer_area__top">
+                    <div class="col-lg-3 col-sm-6 mt-4">
+                        <div class="footer_widget widget">
+                            <div class="footer_widget_logo">
+                                <a href="index.html" class="footer_widget__logo__img"> <img src="assets/img/logo_2.png" alt="logo"> </a>
+                            </div>
+                            <div class="footer_widget__inner mt-4">
+                                <p class="footer_widget__para"> Amet minim mollit non deserunt ullamco est sit ali dolor do amet sint.</p>
+                                <div class="footer_widget__social mt-4">
+                                    <ul class="footer_widget__socialList">
+                                        <li class="footer_widget__socialList__item">
+                                            <a class="footer_widget__socialList__link" href="javascript:void(0)"> <i class="fa-brands fa-facebook-f"></i> </a>
+                                        </li>
+                                        <li class="footer_widget__socialList__item">
+                                            <a class="footer_widget__socialList__link" href="javascript:void(0)"> <i class="fa-brands fa-twitter"></i> </a>
+                                        </li>
+                                        <li class="footer_widget__socialList__item">
+                                            <a class="footer_widget__socialList__link" href="javascript:void(0)"> <i class="fa-brands fa-instagram"></i> </a>
+                                        </li>
+                                        <li class="footer_widget__socialList__item">
+                                            <a class="footer_widget__socialList__link" href="javascript:void(0)"> <i class="fa-brands fa-youtube"></i> </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mt-4">
+                        <div class="footer_widget widget">
+                            <h4 class="footer_widget__title">About Us</h4>
+                            <div class="footer_widget__inner mt-4">
+                                <ul class="footer_widget__linkList">
+                                    <li class="footer_widget__linkList__item">
+                                        <a href="javascript:void(0)">About</a>
+                                    </li>
+                                    <li class="footer_widget__linkList__item">
+                                        <a href="javascript:void(0)">Contact</a>
+                                    </li>
+                                    <li class="footer_widget__linkList__item">
+                                        <a href="javascript:void(0)">Privacy Policy</a>
+                                    </li>
+                                    <li class="footer_widget__linkList__item">
+                                        <a href="javascript:void(0)">Terms & Conditions</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mt-4">
+                        <div class="footer_widget widget">
+                            <h4 class="footer_widget__title">Help & Support</h4>
+                            <div class="footer_widget__inner mt-4">
+                                <ul class="footer_widget__linkList">
+                                    <li class="footer_widget__linkList__item">
+                                        <a href="javascript:void(0)">Documentations</a>
+                                    </li>
+                                    <li class="footer_widget__linkList__item">
+                                        <a href="javascript:void(0)">Faq Question</a>
+                                    </li>
+                                    <li class="footer_widget__linkList__item">
+                                        <a href="javascript:void(0)">Blog</a>
+                                    </li>
+                                    <li class="footer_widget__linkList__item">
+                                        <a href="javascript:void(0)">Integrations</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mt-4">
+                        <div class="footer_widget widget">
+                            <h4 class="footer_widget__title">Tutorials</h4>
+                            <div class="footer_widget__inner mt-4">
+                                <ul class="footer_widget__linkList">
+                                    <li class="footer_widget__linkList__item">
+                                        <a href="javascript:void(0)">How to setup hivesupport</a>
+                                    </li>
+                                    <li class="footer_widget__linkList__item">
+                                        <a href="javascript:void(0)">Make automations work more</a>
+                                    </li>
+                                    <li class="footer_widget__linkList__item">
+                                        <a href="javascript:void(0)">Build a custom form</a>
+                                    </li>
+                                    <li class="footer_widget__linkList__item">
+                                        <a href="javascript:void(0)">Virtual Assistant</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright_area copyright_border">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="copyright_contents">
+                                <span class="copyright_contents__main"> © 2023 <a href="index.html"> HiveSupport </a> All Rights reserved  </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer area end -->
+    <!-- back to top area start -->
+    <div class="back_toTop">
+        <span class="back_top"><i class="fa-solid fa-angle-up"></i></span>
+    </div>
+    <!-- back to top area end -->
+
+    <!-- Mouse Cursor start -->
+    <div class="mouse-move mouse-outer"></div>
+    <div class="mouse-move mouse-inner"></div>
+    <!-- Mouse Cursor Ends -->
+
+    <!-- jquery -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- jquery Migrate -->
+    <script src="assets/js/jquery-migrate.min.js"></script>
+    <!-- bootstrap -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Flat Pickr Js -->
+    <script src="assets/js/flatpicker.js"></script>
+    <!-- Wow Js -->
+    <script src="assets/js/wow.js"></script>
+    <!-- TellInput Js -->
+    <script src="assets/js/intlTelInput.js"></script>
+    <!--  Summer note Js -->
+    <script src="assets/js/summernote-lite.min.js"></script>
+    <!-- Slick Js -->
+    <script src="assets/js/slick.js"></script>
+    <!-- Select2 Js -->
+    <script src="assets/js/select2.min.js"></script>
+    <!-- Circle Progressbar Js -->
+    <script src="assets/js/jquery.easypiechart.min.js"></script>
+    <!-- Chart Js -->
+    <script src="assets/js/chart.js"></script>
+    <!-- Sortable Js -->
+    <script src="assets/js/jquery-sortable-min.js"></script>
+    <!-- Countdown Timer Js -->
+    <script src="assets/js/jquery.syotimer.min.js"></script>
+    <!-- Masonry Js -->
+    <script src="assets/js/masonry.pkgd.min.js"></script>
+    <!-- main js -->
+    <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>

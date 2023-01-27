@@ -1,0 +1,194 @@
+/* Ltd Business Css */
+
+.hive_ltdbusiness_border_top {
+    border-top: 1px solid var(--border-color-two);
+}
+.hive_ltd_business_area {
+    overflow: hidden;
+}
+.center-text {
+    .hive_ltdbusiness {
+        &__author {
+            &__thumb {
+                img {
+                    margin-inline: auto;
+                }
+            }
+            &__tag {
+                justify-content: center;
+            }
+        }
+    }
+}
+
+.hive_ltdbusiness {
+    &__author {
+        &__thumb {
+            img {
+                border-radius: 50%;
+            }
+        }
+        &__title {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--heading-color);
+        }
+        &__tag {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px 30px;
+            flex-wrap: wrap;
+            &__item {
+                display: inline-block;
+                font-size: 16px;
+                font-weight: 400;
+                color: var(--paragraph-color);
+                line-height: 1.4;
+                transition: all .3s;
+                &:hover {
+                    color: var(--main-color-one);
+                }
+                &.name {
+                    font-weight: 500;
+                    color: var(--main-color-one);
+                }
+            }
+        }
+    }
+    &__wrapper {
+        padding-left: 70px;
+        position: relative;
+        @include responsive(allPhone) {
+            padding-left: 0;
+            padding-top: 30px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: -100px;
+            background-color: var(--border-color-two);
+            height: calc(100% + 200px);
+            width: 1px;
+            @include responsive(allPhone) {
+                width: 100%;
+                height: 1px;
+                top: 0;
+            }
+        }
+        &__title {
+            font-size: 36px;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--heading-color);
+            @include responsive(sm) {
+                font-size: 32px;
+            }
+            @include responsive(xxs) {
+                font-size: 28px;
+            }
+            @include responsive(vxxs) {
+                font-size: 26px;
+            }
+        }
+        &__para {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.4;
+            color: var(--paragraph-color);
+            @include responsive(vxxs) {
+                font-size: 15px;
+            }
+        }
+        &__images {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            flex-wrap: wrap;
+            &__item {
+                background-color: var(--white);
+                border-radius: 10px;
+                padding: 20px;
+                max-width: 29%;
+                @include box-shadow(0, 0, 20px, rgba(var(--black-rgb),.05));
+                @include responsive(xs) {
+                    max-width: 45%;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* Slider Nav & Dots style */
+
+.ltd_business_nav {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    justify-content: center;
+    .prev-icon,
+    .next-icon {
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 9;
+        background: var(--border-color);
+        color: var(--paragraph-color);
+        @include transition(300ms);
+        @include flexCenter;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        &:hover {
+            background-color: var(--secondary-color-two);
+            color: $white;
+        }
+        @include responsive(xxl) {
+            left: -25px;
+        }
+        @include responsive(xl) {
+            left: -25px;
+        }
+        @include responsive(lg) {
+            left: -25px;
+        }
+        @include responsive(allPhone) {
+            left: -25px;
+        }
+        @include responsive(xs) {
+            left: 0px;
+        }
+    }
+}
+
+.ltd_business_dot {
+    .slick-dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+        padding: 10px 0 0;
+        li {
+            text-indent: -9999px;
+            height: 10px;
+            width: 10px;
+            background: var(--border-color-two);
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all .5s;
+            &.slick-active {
+                background: var(--secondary-color-two);
+                width: 30px;
+                border-radius: 10px;
+            }
+            button {
+                border: 0;
+                outline: none;
+            }
+        }
+    }
+}
