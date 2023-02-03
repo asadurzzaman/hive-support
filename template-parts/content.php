@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying posts
  *
@@ -8,56 +9,34 @@
  */
 
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) :
+<div class="hive_blogDetails__thumb">
+	<?php the_post_thumbnail() ?>
+</div>
+<div class="hive_blogDetails__contents mt-4">
+	<h3 class="hive_blogDetails__title"><?php the_title(); ?></h3>
+	<div class="hive_blogDetails__flex mt-4">
+		<div class="hive_blogDetails__author">
+			<div class="hive_blogDetails__author__thumb">
+				<a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))) ?>"><?php echo get_avatar('ID', 65,) ?></a>
+			</div>
+			<div class="hive_blogDetails__author__contents">
+				<h5 class="hive_blogDetails__author__title"><a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))) ?>"><?php echo esc_html(get_the_author()); ?></a></h5>
+				<p class="hive_blogDetails__author__para mt-2"><?php echo esc_html(get_the_date('j F, Y')); ?></p>
+			</div>
+		</div>
+		<div class="hive_blogDetails__social">
+			<h6 class="hive_blogDetails__social__para">Share to:</h6> 
+			<?php //echo do_shortcode('[hive_post_social_sharing]'); 
 			?>
-			<div class="entry-meta">
-				<?php
-				hive_support_posted_on();
-				hive_support_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php hive_support_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'hive-support' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'hive-support' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php hive_support_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+		</div>
+	</div>
+	<div class="hive_blogDetails__inner mt-4">
+		<?php the_content(); ?>
+	</div>
+	<div class="hive_blogDetails__tag mt-4 mt-lg-5">
+		<p class="hive_blogDetails__tagPara">Tags:</p>
+		<ul class="hive_blogDetails__tag__list">
+			<?php echo get_the_tag_list('<li>', '</li><li>', '</li>'); ?>
+		</ul>
+	</div>
+</div>

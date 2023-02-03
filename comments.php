@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying comments
  *
@@ -15,63 +16,64 @@
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
-if ( post_password_required() ) {
+if (post_password_required()) {
 	return;
 }
 ?>
 
 <div id="comments" class="comments-area">
+	<h4 class="comments-title">
+		<?php
+		$hive_support_comment_count = get_comments_number();
+		if ('1' === $hive_support_comment_count) {
+			printf(
+				/* translators: 1: title. */
+				esc_html__('One thought on &ldquo;%1$s&rdquo;', 'hive-support'),
+				'<span>' . wp_kses_post(get_the_title()) . '</span>'
+			);
+		} else {
+			printf(
+				/* translators: 1: comment count number, 2: title. */
+				esc_html(_nx('%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $hive_support_comment_count, 'comments title', 'hive-support')),
+				number_format_i18n($hive_support_comment_count), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				'<span>' . wp_kses_post(get_the_title()) . '</span>'
+			);
+		}
+		?>
+	</h4><!-- .comments-title -->
+  
 
 	<?php
 	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
-		?>
-		<h2 class="comments-title">
-			<?php
-			$hive_support_comment_count = get_comments_number();
-			if ( '1' === $hive_support_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'hive-support' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			} else {
-				printf( 
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $hive_support_comment_count, 'comments title', 'hive-support' ) ),
-					number_format_i18n( $hive_support_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			}
-			?>
-		</h2><!-- .comments-title -->
-
+	if (have_comments()) :
+	?>
 		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
+		<div class="hive_blogDetails__commentView mt-4 mt-lg-5">
 			<?php
 			wp_list_comments(
 				array(
-					'style'      => 'ol',
+					// 'style'      => 'div',
 					'short_ping' => true,
+					'callback' => 'hive_better_commets'
 				)
 			);
 			?>
-		</ol><!-- .comment-list -->
+		</div><!-- .comment-list -->
 
-		<?php
-		the_comments_navigation();
-
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
-			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'hive-support' ); ?></p>
 			<?php
-		endif;
+			the_comments_navigation();
 
-	endif; // Check for have_comments().
+			// If comments are closed and there are comments, let's leave a little note, shall we?
+			if (!comments_open()) :
+			?>
+				<p class="no-comments"><?php esc_html_e('Comments are closed.', 'hive-support'); ?></p>
+		<?php
+			endif;
 
-	comment_form();
-	?>
+		endif; // Check for have_comments().
 
+		comment_form();
+		?>
+ 
 </div><!-- #comments -->

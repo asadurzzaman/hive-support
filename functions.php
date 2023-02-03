@@ -99,6 +99,8 @@ function hive_support_setup() {
 			'flex-height' => true,
 		)
 	);
+	add_image_size('blog-post', 450, 306, true);
+	add_image_size('blog-widget', 90, 92, true);
 }
 add_action( 'after_setup_theme', 'hive_support_setup' );
 
@@ -122,8 +124,19 @@ add_action( 'after_setup_theme', 'hive_support_content_width', 0 );
 function hive_support_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'hive-support' ),
-			'id'            => 'sidebar-1',
+			'name'          => esc_html__( 'Blog Sidebar', 'hive-support' ),
+			'id'            => 'blog-sidebar',
+			'description'   => esc_html__( 'Add widgets here.', 'hive-support' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Sidebar', 'hive-support' ),
+			'id'            => 'footer-sidebar',
 			'description'   => esc_html__( 'Add widgets here.', 'hive-support' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -146,6 +159,21 @@ require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/inc/enqueue.php';
 
 /**
+ * Widget Development.
+ */
+require get_template_directory() . '/inc/widget.php';
+
+/**
+ * Widget Development.
+ */
+require get_template_directory() . '/inc/comment-helper.php';
+
+/**
+ * Shordcode Development.
+ */
+require get_template_directory() . '/inc/shordcode.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -159,6 +187,16 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * kirki installer .
+ */
+require get_template_directory() . '/inc/class-kirki-installer-section.php';
+
+/**
+ * kirki installer .
+ */
+require get_template_directory() . '/inc/kirki.php';
 
 /**
  * Load Jetpack compatibility file.

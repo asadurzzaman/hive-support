@@ -214,6 +214,7 @@ a i {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 .list-style-none {
@@ -5199,6 +5200,26 @@ textarea {
 }
 
 /* Policy Css */
+article.page {
+  max-width: 1050px;
+  background-color: var(--white);
+  padding: 30px;
+  margin-inline: auto;
+  border-radius: 5px;
+}
+article.page header h1.entry-title{
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--heading-color);
+}
+article.page .entry-content p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--paragraph-color);
+  margin-bottom: 20px;
+}
 .hive_policy {
   max-width: 1050px;
   background-color: var(--white);
@@ -5593,13 +5614,59 @@ textarea {
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
+.required{
+  color:red;
+}
+form#commentform p label {
+  display: block;
+  margin-bottom: 5px;
+}
+form#commentform p input[type=text],
+form#commentform p input[type=email],
+form#commentform p input[type=url],
 .hive_blogDetails__comment__input .form--control {
-  height: 60px;
+  height: 40px;
   border: 1px solid rgba(var(--black-rgb), 0.15);
   background-color: var(--white);
   border-radius: 5px;
-  padding: 0 15px;
-  padding-right: 100px;
+  padding: 0 15px; 
+  width: 100%;
+}
+form#commentform p textarea{
+    height: 40px;
+    border: 1px solid rgba(var(--black-rgb), 0.15);
+    background-color: var(--white);
+    border-radius: 5px; 
+    padding: 10px 15px;
+}
+h4.comments-title {
+  margin-top: 20px;
+}
+form#commentform p.comment-form-email,
+form#commentform p.comment-form-author {
+  width: 45%;
+  display: inline-block;
+}
+form#commentform p.comment-form-cookies-consent {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+form#commentform p.comment-form-cookies-consent label {
+  display: inherit;
+  padding-left: 10px;
+}
+.form-submit input[type=submit]{
+  background-color: var(--main-color-one);
+    color: var(--white);
+    border: 1px solid var(--main-color-one);
+    outline: none;
+    padding: 5px 20px;
+    height: 100%;
+    border-radius: 5px;
+    font-size: 15px;
+}
+form#commentform {
+  margin-top: 20px;
 }
 .hive_blogDetails__comment__input button {
   position: absolute;

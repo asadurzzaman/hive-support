@@ -9,7 +9,7 @@
  *
  * @package hive_support
  */
-if (is_home() or is_front_page()) {
+if (is_front_page()) {
 	$menu_class = 'nav-absolute white_nav';
 	$menu_link = 'color_white';
 	$menu_button_link = 'btn_bg_white';
@@ -37,7 +37,7 @@ if (is_home() or is_front_page()) {
 			<div class="container custom-container-one nav-container">
 				<div class="logo-wrapper">
 					<?php
-					if (is_front_page() or is_home()) {
+					if ( is_front_page() ) {
 						the_custom_logo();
 					?>
 						<h1 class="site-title">

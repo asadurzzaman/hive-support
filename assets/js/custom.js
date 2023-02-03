@@ -230,7 +230,7 @@
             Sortable js
         ========================================
         */
-        $(".hiveSortable_drag, .hiveSortableCustom__drag").sortable();
+        // $(".hiveSortable_drag, .hiveSortableCustom__drag").sortable();
         /*          
         ========================================
             Sortable Remove js
