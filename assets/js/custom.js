@@ -444,13 +444,7 @@
             CountDown Timer
         ========================================
         */
-        $('.global-timer').syotimer({
-            year: 2023,
-            month: 6,
-            day: 20,
-            hour: 20,
-            minute: 30
-        });
+        
         /*
         ========================================
             Media Uploader js

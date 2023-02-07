@@ -79,7 +79,7 @@ Kirki::add_section('lifetile_deals_id', array(
 
 Kirki::add_field('hive_support_customizer', array(
     'type'        => 'editor',
-    'settings'    => 'hero_area_setting',
+    'settings'    => 'hero_area_header_setting',
     'label'       => esc_html__('Hero Hedding', 'kirki'),
     'section'     => 'home_section_id',
     'transport'   => 'refresh',
@@ -95,12 +95,21 @@ kirki::add_field('hive_support_customizer', array(
     'priority'    => 10,
     'transport'   => 'refresh', // or postMessage
 ));
+kirki::add_field('hive_support_customizer', array(
+    'type'        => 'url',
+    'settings'    => 'hero_area_url_setting',
+    'label'       => esc_html__('Button Url', 'kirki'),
+    'section'     => 'home_section_id',
+    'default'     => '#',
+    'priority'    => 10,
+    'transport'   => 'refresh', // or postMessage
+));
 Kirki::add_field('hive_support_customizer', array(
     'type'        => 'image',
     'settings'    => 'hero_area_image_setting',
     'label'       => esc_html__('Hero Image', 'kirki'),
     'section'     => 'home_section_id',
-    'default'     => '',
+    'default'     => get_template_directory_uri() . '/assets/img/banner/banner.jpg',
     'priority'    => 10,
     'transport'   => 'refresh',
     'output'      => array(
@@ -109,13 +118,6 @@ Kirki::add_field('hive_support_customizer', array(
             'property' => 'background-image',
         ),
     ),
-    // 'active_callback'  => array(
-    //     array(
-    //         'setting'  => 'home_page_setting',
-    //         'operator' => '==',
-    //         'value'    => '1',
-    //     ),
-    // ),
 ));
 Kirki::add_field('hive_support_customizer', array(
     'type'        => 'editor',
@@ -135,46 +137,160 @@ Kirki::add_field('hive_support_customizer', array(
     'priority'    => 10,
     'default'     => 'Loyal customers are built on support, Use hiveSupport to provide great support experiences to your customers.',
 ));
-Kirki::add_field('hive_support_customizer', array(
+// Kirki::add_field('hive_support_customizer', array(
+//     'type'        => 'repeater',
+//     'settings'    => 'below_header_section_content',
+//     'label'       => esc_html__('Below Header 3 Section', 'kirki'),
+//     'section'     => 'home_section_id',
+//     'transport'   => 'refresh',
+//     'priority'    => 10,
+//     'row_label'    => [
+//         'type'  => 'field',
+//         'value' => esc_html__('Section ', 'kirki'),
+//         'field' => 'link_text',
+//     ],
+//     'choices' => [
+//         'limit' => 3
+//     ],
+//     'button_label' => esc_html__('"Add new section"(optional) ', 'kirki'),
+//     'default'     => [
+//         [
+//             'bhs_img' => get_template_directory_uri() . '/assets/img/single-page/provide1.png',
+//             'title' => 'Delight Customers',
+//             'content' => 'Make customers feel delighted by providing them the right support using our superfast support Plug-in',
+//         ],
+//         [
+//             'bhs_img' => get_template_directory_uri() . '/assets/img/single-page/provide2.png',
+//             'title' => 'Delight Customers',
+//             'content' => 'Make customers feel delighted by providing them the right support using our superfast support Plug-in',
+//         ],
+//         [
+//             'bhs_img' => get_template_directory_uri() . '/assets/img/single-page/provide3.png',
+//             'title' => 'Delight Customers',
+//             'content' => 'Make customers feel delighted by providing them the right support using our superfast support Plug-in',
+//         ],
+//     ],
+//     'fields'   => [
+//         'bhs_img' => [
+//             'type'        => 'image',
+//             'label'       => esc_html__('Image', 'kirki'),
+//             'default'     => '',
+//         ],
+//         'bhs_title' => [
+//             'type'        => 'text',
+//             'label'       => esc_html__('Title', 'kirki'),
+//             'default'     => 'Delight Customers',
+//         ],
+//         'bhs_content' => [
+//             'type'        => 'textarea',
+//             'label'       => esc_html__('Content', 'kirki'),
+//             'default'     => 'Make customers feel delighted by providing them the right support using our superfast support Plug-in',
+//         ],
+//     ],
+// ));
+
+kirki::add_field('hive_support_customizer',array(
     'type'        => 'repeater',
-    'settings'    => 'below_header_section_content',
-    'label'       => esc_html__('3 Section', 'kirki'),
+    'settings'    => 'customer_review_section_content',
+    'label'       => esc_html__('Customer Reviews', 'kirki'),
     'section'     => 'home_section_id',
     'transport'   => 'refresh',
     'priority'    => 10,
+    'row_label'    => [
+        'type'  => 'field',
+        'value' => esc_html__('Review  ', 'kirki'),
+        'field' => 'link_text',
+    ], 
+    'button_label' => esc_html__('"Add new section"(optional) ', 'kirki'),
     'default'     => [
         [
-            'title' => 'Delight Customers',
-            'content' => 'Make customers feel delighted by providing them the right support using our superfast support Plug-in',
+            'review_title' => 'Great tool for business!',
+            'review_content' => 'I got my support improved by using Hive support I must say they’re the best support tool for wordpress out there!
+                                I’ll probably recommend it to my fellow business owners.',
+            'customer_img' => get_template_directory_uri() . '/assets/img/single-page/author1.jpg',
+            'customer_name' => 'John Doe',
+            'customer_designation' => 'CEO, Company Name',
         ],
         [
-            'title' => 'Affordable Pricing',
-            'content' => 'Make customers feel delighted by providing them the right support using our superfast support Plug-in',
+            'review_title' => 'Great tool for business!',
+            'review_content' => 'I got my support improved by using Hive support I must say they’re the best support tool for wordpress out there!
+                                I’ll probably recommend it to my fellow business owners.',
+            'customer_img' => get_template_directory_uri() . '/assets/img/single-page/author2.jpg',
+            'customer_name' => 'John Doe',
+            'customer_designation' => 'CEO, Company Name',
         ],
         [
-            'title' => 'Free/Pro Version',
-            'content' => 'Make customers feel delighted by providing them the right support using our superfast support Plug-in',
+            'review_title' => 'Great tool for business!',
+            'review_content' => 'I got my support improved by using Hive support I must say they’re the best support tool for wordpress out there!
+                                I’ll probably recommend it to my fellow business owners.',
+            'customer_img' => get_template_directory_uri() . '/assets/img/single-page/author3.jpg',
+            'customer_name' => 'John Doe',
+            'customer_designation' => 'CEO, Company Name',
+        ],
+        [
+            'review_title' => 'Great tool for business!',
+            'review_content' => 'I got my support improved by using Hive support I must say they’re the best support tool for wordpress out there!
+                                I’ll probably recommend it to my fellow business owners.',
+            'customer_img' => get_template_directory_uri() . '/assets/img/single-page/author3.jpg',
+            'customer_name' => 'John Doe',
+            'customer_designation' => 'CEO, Company Name',
+        ],
+        [
+            'review_title' => 'Great tool for business!',
+            'review_content' => 'I got my support improved by using Hive support I must say they’re the best support tool for wordpress out there!
+                                I’ll probably recommend it to my fellow business owners.',
+            'customer_img' => get_template_directory_uri() . '/assets/img/single-page/author3.jpg',
+            'customer_name' => 'John Doe',
+            'customer_designation' => 'CEO, Company Name',
         ],
     ],
     'fields'   => [
-        'title' => [
+        'review_title' => [
             'type'        => 'text',
-            'label'       => esc_html__('Title', 'kirki'),
-            'default'     => 'Delight Customers',
+            'label'       => esc_html__('Review Title', 'kirki'),
+            'default'     => 'Great tool for business!',
         ],
-        'content' => [
+        'review_content' => [
             'type'        => 'textarea',
-            'label'       => esc_html__('Content', 'kirki'),
-            'default'     => 'Make customers feel delighted by providing them the right support using our superfast support Plug-in',
+            'label'       => esc_html__('Review Content ', 'kirki'),
+            'default'     => 'I got my support improved by using Hive support I must say they’re the best support tool for wordpress out there!
+                                I’ll probably recommend it to my fellow business owners.',
         ],
+        'customer_img' => [
+            'type'        => 'image',
+            'label'       => esc_html__('Customer Image', 'kirki'),
+            'default'     => get_template_directory_uri() . '/assets/img/single-page/author1.jpg',
+        ],
+        'customer_name' => [
+            'type'        => 'text',
+            'label'       => esc_html__('Customer Name', 'kirki'),
+            'default'     => 'Robert Fox',
+        ],
+        'customer_designation' => [
+            'type'        => 'text',
+            'label'       => esc_html__('Customer Designation', 'kirki'),
+            'default'     => 'CEO, NNN',
+        ],
+
     ],
 ));
+
 
 /**
  * Pring Table One
  * 
  * 
  * */
+kirki::add_field('hive_support_customizer',array(
+    'type'        => 'toggle',
+    'settings'    => 'active_class_one',
+    'label'       => esc_html__('Popular Plan', 'kirki'),
+    'section'     => 'price_table_one',
+    'transport'   => 'refresh',
+    'priority'    => 10,
+    'default'     => 'active_plan',
+
+));
 Kirki::add_field('hive_support_customizer', array(
     'type'        => 'number',
     'settings'    => 'price_section_one_hedding',
@@ -184,7 +300,6 @@ Kirki::add_field('hive_support_customizer', array(
     'priority'    => 10,
     'default'     => '0',
 ));
-
 Kirki::add_field('hive_support_customizer', array(
     'type'        => 'text',
     'settings'    => 'price_section_one_label',
@@ -194,7 +309,6 @@ Kirki::add_field('hive_support_customizer', array(
     'priority'    => 10,
     'default'     => 'Free/Lifetime',
 ));
-
 Kirki::add_field('hive_support_customizer', array(
     'type'        => 'text',
     'settings'    => 'price_section_one_url',
@@ -204,7 +318,24 @@ Kirki::add_field('hive_support_customizer', array(
     'priority'    => 10,
     'default'     => '32456',
 ));
-
+Kirki::add_field('hive_support_customizer', array(
+    'type'        => 'text',
+    'settings'    => 'price_section_one_total_license',
+    'label'       => esc_html__('Total License', 'kirki'),
+    'section'     => 'price_table_one',
+    'transport'   => 'refresh',
+    'priority'    => 10,
+    'default'     => '50 site license',
+));
+Kirki::add_field('hive_support_customizer', array(
+    'type'        => 'text',
+    'settings'    => 'price_section_one_button_text',
+    'label'       => esc_html__('Button text', 'kirki'),
+    'section'     => 'price_table_one',
+    'transport'   => 'refresh',
+    'priority'    => 10,
+    'default'     => 'Try now',
+));
 Kirki::add_field('hive_support_customizer', array(
     'type'        => 'repeater',
     'settings'    => 'price_section_one_repeater',
@@ -212,46 +343,52 @@ Kirki::add_field('hive_support_customizer', array(
     'section'     => 'price_table_one',
     'transport'   => 'refresh',
     'priority'    => 10,
+    'row_label'    => [
+        'type'  => 'field',
+        'value' => esc_html__('Features ', 'kirki'),
+        'field' => 'link_text',
+    ],
+    'button_label' => esc_html__('Add New Features', 'kirki'),
     'default'     => [
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show',
+            'radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show',
+            'radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show',
+            'radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show',
+            'radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show_off',
+            'radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show_off',
+            'radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show',
+            'radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show_off',
+            'radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show_off',
+            'radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show_off',
+            'radio' => 'on',
         ],
     ],
     'fields'   => [ 
@@ -259,14 +396,14 @@ Kirki::add_field('hive_support_customizer', array(
             'type'        => 'text',
             'label'       => esc_html__('Price Features', 'kirki'),
             'default'     => 'Basic ticket features',
-        ], 
-        'choice' => [
-            'type'        => 'select',
+        ],
+        'radio' => [
+            'type'        => 'radio',
             'label'       => esc_html__('Feature On/Off', 'kirki'),
-            'default'     => 'list_show',
+            'default'     => 'off',
             'choices'     => [
-                'list_show'  => esc_html__('On', 'kirki'),
-                'list_show_off' => esc_html__('Off', 'kirki'),
+                'on'   => esc_html__('On', 'kirki'),
+                'off' => esc_html__('Off', 'kirki'),  
             ],
         ], 
     ],
@@ -277,6 +414,16 @@ Kirki::add_field('hive_support_customizer', array(
  * 
  * 
  * */
+kirki::add_field('hive_support_customizer', array(
+    'type'        => 'toggle',
+    'settings'    => 'active_class_two',
+    'label'       => esc_html__('Popular Plan', 'kirki'),
+    'section'     => 'price_table_two',
+    'transport'   => 'refresh',
+    'priority'    => 10,
+    'default'     => 'active_plan',
+
+));
 Kirki::add_field('hive_support_customizer', array(
     'type'        => 'number',
     'settings'    => 'price_section_two_hedding',
@@ -307,52 +454,76 @@ Kirki::add_field('hive_support_customizer', array(
     'default'     => '32456',
 ));
 Kirki::add_field('hive_support_customizer', array(
+    'type'        => 'text',
+    'settings'    => 'price_section_two_total_license',
+    'label'       => esc_html__('Total License', 'kirki'),
+    'section'     => 'price_table_two',
+    'transport'   => 'refresh',
+    'priority'    => 10,
+    'default'     => '50 site license',
+));
+Kirki::add_field('hive_support_customizer', array(
+    'type'        => 'text',
+    'settings'    => 'price_section_two_button_text',
+    'label'       => esc_html__('Button text', 'kirki'),
+    'section'     => 'price_table_two',
+    'transport'   => 'refresh',
+    'priority'    => 10,
+    'default'     => 'Try now',
+));
+Kirki::add_field('hive_support_customizer', array(
     'type'        => 'repeater',
     'settings'    => 'price_section_two_repeater',
     'label'       => esc_html__('Price Features', 'kirki'),
     'section'     => 'price_table_two',
     'transport'   => 'refresh',
     'priority'    => 10,
+    'row_label'    => [
+        'type'  => 'field',
+        'value' => esc_html__('Features ', 'kirki'),
+        'field' => 'link_text',
+    ],
+    'button_label' => esc_html__('Add New Features', 'kirki'),
     'default'     => [
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show',
+            'two_radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show',
+            'two_radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show',
+            'two_radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show',
+            'two_radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show_off',
+            'two_radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show_off',
+            'two_radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show',
+            'two_radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show_off',
+            'two_radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show_off',
+            'two_radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show_off',
+            'two_radio' => 'on',
         ],
     ],
     'fields'   => [
@@ -361,13 +532,13 @@ Kirki::add_field('hive_support_customizer', array(
             'label'       => esc_html__('Price Features', 'kirki'),
             'default'     => 'Basic ticket features',
         ],
-        'choice' => [
-            'type'        => 'select',
+        'two_radio' => [
+            'type'        => 'radio',
             'label'       => esc_html__('Feature On/Off', 'kirki'),
-            'default'     => 'list_show',
+            'default'     => 'off',
             'choices'     => [
-                'list_show'  => esc_html__('On', 'kirki'),
-                'list_show_off' => esc_html__('Off', 'kirki'),
+                'on'   => esc_html__('On', 'kirki'),
+                'off' => esc_html__('Off', 'kirki'),
             ],
         ],
     ],
@@ -377,7 +548,16 @@ Kirki::add_field('hive_support_customizer', array(
  * 
  * 
  * */
+kirki::add_field('hive_support_customizer', array(
+    'type'        => 'toggle',
+    'settings'    => 'active_class_three',
+    'label'       => esc_html__('Popular Plan', 'kirki'),
+    'section'     => 'price_table_three',
+    'transport'   => 'refresh',
+    'priority'    => 10,
+    'default'     => 'active_plan',
 
+));
 Kirki::add_field('hive_support_customizer', array(
     'type'        => 'number',
     'settings'    => 'price_section_three_hedding',
@@ -408,52 +588,76 @@ Kirki::add_field('hive_support_customizer', array(
     'default'     => '32456',
 ));
 Kirki::add_field('hive_support_customizer', array(
+    'type'        => 'text',
+    'settings'    => 'price_section_three_total_license',
+    'label'       => esc_html__('Total License', 'kirki'),
+    'section'     => 'price_table_three',
+    'transport'   => 'refresh',
+    'priority'    => 10,
+    'default'     => '50 site license',
+));
+Kirki::add_field('hive_support_customizer', array(
+    'type'        => 'text',
+    'settings'    => 'price_section_three_button_text',
+    'label'       => esc_html__('Button text', 'kirki'),
+    'section'     => 'price_table_three',
+    'transport'   => 'refresh',
+    'priority'    => 10,
+    'default'     => 'Try now',
+));
+Kirki::add_field('hive_support_customizer', array(
     'type'        => 'repeater',
     'settings'    => 'price_section_three_repeater',
     'label'       => esc_html__('Price Features', 'kirki'),
     'section'     => 'price_table_three',
     'transport'   => 'refresh',
     'priority'    => 10,
+    'row_label'    => [
+        'type'  => 'field',
+        'value' => esc_html__('Features ', 'kirki'),
+        'field' => 'link_text',
+    ],
+    'button_label' => esc_html__('Add New Features', 'kirki'),
     'default'     => [
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show',
+            'radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show',
+            'radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show',
+            'radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show',
+            'radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show_off',
+            'radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show_off',
+            'radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show',
+            'radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show_off',
+            'radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show_off',
+            'radio' => 'on',
         ],
         [
             'label' => 'Basic ticket features',
-            'choice' => 'list_show_off',
+            'radio' => 'on',
         ],
     ],
     'fields'   => [
@@ -462,13 +666,13 @@ Kirki::add_field('hive_support_customizer', array(
             'label'       => esc_html__('Price Features', 'kirki'),
             'default'     => 'Basic ticket features',
         ],
-        'choice' => [
-            'type'        => 'select',
+        'radio' => [
+            'type'        => 'radio',
             'label'       => esc_html__('Feature On/Off', 'kirki'),
-            'default'     => 'list_show',
+            'default'     => 'off',
             'choices'     => [
-                'list_show'  => esc_html__('On', 'kirki'),
-                'list_show_off' => esc_html__('Off', 'kirki'),
+                'on'   => esc_html__('On', 'kirki'),
+                'off' => esc_html__('Off', 'kirki'),
             ],
         ],
     ],
@@ -614,3 +818,34 @@ Kirki::add_field('hive_support_customizer', array(
 
     ],
 ));
+
+kirki::add_field('hive_support_customizer', array(
+    'type'        => 'number',
+    'settings'    => 'lifetile_deals_current_deal',
+    'label'       => esc_html__('Curent Deal', 'kirki'),
+    'section'     => 'lifetile_deals_id',
+    'default'     => '299',
+    'priority'    => 10,
+    'transport'   => 'refresh', // or postMessage
+));
+
+kirki::add_field('hive_support_customizer', array(
+    'type'        => 'number',
+    'settings'    => 'lifetile_deals_old_deal',
+    'label'       => esc_html__('Old Deal', 'kirki'),
+    'section'     => 'lifetile_deals_id',
+    'default'     => '599',
+    'priority'    => 10,
+    'transport'   => 'refresh', // or postMessage
+));
+
+kirki::add_field('hive_support_customizer', array(
+    'type'        => 'date',
+    'settings'    => 'lifetile_deals_date',
+    'label'       => esc_html__('Seat Date', 'kirki'),
+    'section'     => 'lifetile_deals_id',
+    'default'     => '',
+    'priority'    => 10,
+    'transport'   => 'refresh', // or postMessage
+));
+

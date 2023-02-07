@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Name: Lifetime Deal Template
  */
@@ -24,7 +25,53 @@ get_header();
                     <a href="javascript:void(0)" class="hive_btn btn_bg_white">Get Deal Now</a>
                 </div>
                 <div class="hive_ltdBanner__countdown mt-4 mt-lg-5">
-                    <div class="global-timer"></div>
+                    <div id="global-timer"></div>
+
+
+                    <?php
+                    $date = get_theme_mod('lifetile_deals_date', 'M d, Y H:i:s');
+
+                    $date = strtotime($date);
+                    $remaining = $date - time();
+                    $days_remaining = floor($remaining / 86400);
+                    $hours_remaining = floor(($remaining % 86400) / 3600);
+
+                    echo "There are $days_remaining days and $hours_remaining hours left";
+
+
+                    ?>
+                    <div id="countdown"></div>
+
+                    <script>
+                        // Get the count down date from PHP
+                        var countDownDate = new Date("<?php echo $date; ?>").getTime();
+
+                        // Update the count down every 1 second
+                        var x = setInterval(function() {
+
+                            // Get todays date and time
+                            var now = new Date().getTime();
+
+                            // Find the distance between now and the count down date
+                            var distance = countDownDate - now;
+
+                            // Time calculations for days, hours, minutes and seconds
+                            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                            // Display the result in the element with id="countdown"
+                            document.getElementById("global-timer").innerHTML = days + "d " + hours + "h " +
+                                minutes + "m " + seconds + "s ";
+
+                            // If the count down is finished, write some text 
+                            if (distance < 0) {
+                                clearInterval(x);
+                                document.getElementById("global-timer").innerHTML = "EXPIRED";
+                            }
+                        }, 1000);
+                    </script>
                 </div>
             </div>
         </div>
