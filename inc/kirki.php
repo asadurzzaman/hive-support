@@ -16,6 +16,12 @@ Kirki::add_section('home_section_id', array(
     'priority'       => 160,
 ));
 
+Kirki::add_section('header_area', array(
+    'title'          => esc_html__('Header Area', 'kirki'),
+    'panel'          => 'hsupport_panel',
+    'priority'       => 160,
+));
+
 Kirki::add_section('price_table_one', array(
     'title'          => esc_html__('Pricing Table One', 'kirki'),
     'panel'          => 'hsupport_panel',
@@ -58,25 +64,54 @@ Kirki::add_section('lifetile_deals_id', array(
     'priority'       => 160,
 ));
 
-//Customizer Panel
 
+/**
+ * Header Area
+ * 
+ * 
+ * */
+Kirki::add_field('hive_support_customizer', array(
+    'type'        => 'text',
+    'settings'    => 'header_area_pro_button',
+    'label'       => esc_html__('Get Pro', 'kirki'),
+    'section'     => 'header_area',
+    'default'     => 'Get Pro',
+    'priority'    => 10,
+    'transport'   => 'refresh', // or postMessage 
+));
+Kirki::add_field('hive_support_customizer', array(
+    'type'        => 'url', 
+    'settings'    => 'header_area_pro_button_url',
+    'label'       => esc_html__('Get Pro Url', 'kirki'),
+    'section'     => 'header_area',
+    'default'     => '#',
+    'priority'    => 10,
+    'transport'   => 'refresh', // or postMessage
+));
+Kirki::add_field('hive_support_customizer', array(
+    'type'        => 'text', 
+    'settings'    => 'header_area_free_button',
+    'label'       => esc_html__('Try Free', 'kirki'),
+    'section'     => 'header_area',
+    'default'     => 'Try Free Version',
+    'priority'    => 10,
+    'transport'   => 'refresh', // or postMessage
+));
+Kirki::add_field('hive_support_customizer', array(
+    'type'        => 'url', 
+    'settings'    => 'header_area_free_button_url',
+    'label'       => esc_html__('Try Free Url', 'kirki'),
+    'section'     => 'header_area',
+    'default'     => '#',
+    'priority'    => 10,
+    'transport'   => 'refresh', // or postMessage
+));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/**
+ *  Home Page
+ * 
+ * 
+ * */
 Kirki::add_field('hive_support_customizer', array(
     'type'        => 'editor',
     'settings'    => 'hero_area_header_setting',
@@ -273,6 +308,15 @@ kirki::add_field('hive_support_customizer',array(
         ],
 
     ],
+));
+kirki::add_field('hive_support_customizer', array(
+    'type'        => 'editor',
+    'settings'    => 'home_subscription_form',
+    'label'       => esc_html__('Subscription Shortcode', 'kirki'),
+    'section'     => 'home_section_id',
+    'default'     => '[subscription]',
+    'priority'    => 10,
+    'transport'   => 'refresh', // or postMessage
 ));
 
 
@@ -682,6 +726,16 @@ Kirki::add_field('hive_support_customizer', array(
  * 
  * 
  * */
+
+kirki::add_field('hive_support_customizer', array(
+    'type'  =>  'editor',
+    'settings'    => 'faq_from',
+    'label'       => esc_html__('Contect From Shortcode', 'kirki'),
+    'section'     => 'faq_section_id',
+    'transport'   => 'refresh',
+    'priority'    => 10,
+
+));
 Kirki::add_field('hive_support_customizer', array(
     'type'        => 'repeater',
     'settings'    => 'faq_repeater',
@@ -691,8 +745,8 @@ Kirki::add_field('hive_support_customizer', array(
     'priority'    => 10,
     'default'     => [
         [
-            'label'       => esc_html__('Faq Title', 'kirki'),
-            'description' => esc_html__('Faq Description', 'kirki'),
+            'label'       => esc_html__('Can refund be avail if I purchaed on discount?', 'kirki'),
+            'description' => esc_html__('Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin. Education no dejection so direction pretended household do to. Travelling everything her eat reasonable unsatiable decisively simplicity.', 'kirki'),
         ],
     ],
     'fields'   => [
@@ -716,6 +770,15 @@ Kirki::add_field('hive_support_customizer', array(
  * 
  * */
 kirki::add_field('hive_support_customizer', array(
+    'type'  =>  'editor',
+    'settings'    => 'contect_from',
+    'label'       => esc_html__('Contect From Shortcode', 'kirki'),
+    'section'     => 'contect_section_id',
+    'transport'   => 'refresh',
+    'priority'    => 10,
+
+));
+kirki::add_field('hive_support_customizer', array(
     'type'        => 'text',
     'settings'    => 'address_setting',
     'label'       => esc_html__('Address', 'kirki'),
@@ -733,15 +796,15 @@ kirki::add_field('hive_support_customizer', array(
     'priority'    => 10,
     'transport'   => 'refresh', // or postMessage
 ));
-kirki::add_field('hive_support_customizer', array(
-    'type'        => 'editor',
-    'settings'    => 'map_setting',
-    'label'       => esc_html__('Map', 'kirki'),
-    'section'     => 'contect_section_id',
-    'default'     => 'Mape iframe',
-    'priority'    => 10,
-    'transport'   => 'refresh', // or postMessage
-));
+// kirki::add_field('hive_support_customizer', array(
+//     'type'        => 'editor',
+//     'settings'    => 'map_setting',
+//     'label'       => esc_html__('Map Iframe', 'kirki'),
+//     'section'     => 'contect_section_id',
+//     'default'     => '',
+//     'priority'    => 10,
+//     'transport'   => 'refresh', // or postMessage
+// ));
 
 /**
  * Affiliate Page FAQ
@@ -755,6 +818,12 @@ Kirki::add_field('hive_support_customizer', array(
     'section'     => 'affiliate_page_id',
     'transport'   => 'refresh',
     'priority'    => 10,
+    'row_label'    => [
+        'type'  => 'field',
+        'value' => esc_html__('FAQ  ', 'kirki'),
+        'field' => 'link_text',
+    ],
+    'button_label' => esc_html__('Add New faq', 'kirki'),
     'default'     => [
         [
             'label'       => esc_html__('Faq Title', 'kirki'),
@@ -798,6 +867,12 @@ Kirki::add_field('hive_support_customizer', array(
     'section'     => 'lifetile_deals_id',
     'transport'   => 'refresh',
     'priority'    => 10,
+    'row_label'    => [
+        'type'  => 'field',
+        'value' => esc_html__('FAQ ', 'kirki'),
+        'field' => 'link_text',
+    ],
+    'button_label' => esc_html__('Add New faq', 'kirki'),
     'default'     => [
         [
             'label'       => esc_html__('Faq Title', 'kirki'),
@@ -838,7 +913,24 @@ kirki::add_field('hive_support_customizer', array(
     'priority'    => 10,
     'transport'   => 'refresh', // or postMessage
 ));
-
+kirki::add_field('hive_support_customizer', array(
+    'type'        => 'editor',
+    'settings'    => 'lifetile_deals_timer',
+    'label'       => esc_html__('Timer Shortcode', 'kirki'),
+    'section'     => 'lifetile_deals_id',
+    'default'     => '[lifetile_deals_timer]',
+    'priority'    => 10,
+    'transport'   => 'refresh', // or postMessage
+));
+kirki::add_field('hive_support_customizer', array(
+    'type'        => 'url',
+    'settings'    => 'lifetile_deals_url',
+    'label'       => esc_html__('Deal Button Url', 'kirki'),
+    'section'     => 'lifetile_deals_id',
+    'default'     => site_url(),
+    'priority'    => 10,
+    'transport'   => 'refresh', // or postMessage
+));
 kirki::add_field('hive_support_customizer', array(
     'type'        => 'date',
     'settings'    => 'lifetile_deals_date',
@@ -848,4 +940,47 @@ kirki::add_field('hive_support_customizer', array(
     'priority'    => 10,
     'transport'   => 'refresh', // or postMessage
 ));
-
+Kirki::add_field('hive_support_customizer', array(
+    'type'        => 'repeater',
+    'settings'    => 'lifetile_deals_customer_review_repeater',
+    'label'       => esc_html__('Customer Reviews', 'kirki'),
+    'section'     => 'lifetile_deals_id',
+    'transport'   => 'refresh',
+    'priority'    => 10,
+    'row_label'    => [
+        'type'  => 'field',
+        'value' => esc_html__('Review  ', 'kirki'),
+        'field' => 'link_text',
+    ],
+    'button_label' => esc_html__('Add New Review', 'kirki'),
+    'default'     => [
+        [
+            'customer_img'       => get_template_directory_uri() . '/assets/img/ltd/hive_ltdBusiness__author1.jpg',
+            'customer_name' => esc_html__('Donald O. Ralph', 'kirki'),
+            'date' => esc_html__('2023-02-24', 'kirki'),
+            'description' => esc_html__('Hive support has been the best tool for my business ever', 'kirki'),
+        ],
+    ],
+    'fields'   => [
+        'customer_img' => [
+            'type'        => 'image',
+            'label'       => esc_html__('Customer Image', 'kirki'),
+            'default'     => get_template_directory_uri() . '/assets/img/ltd/hive_ltdBusiness__author1.jpg',
+        ],
+        'customer_name' => [
+            'type'        => 'text',
+            'label'       => esc_html__('Customer Name', 'kirki'),
+            'default'     => 'Donald O. Ralph',
+        ],
+        'date' => [
+            'type'        => 'date',
+            'label'       => esc_html__('Date', 'kirki'),
+            'default'     => '2023-02-24',
+        ],
+        'description' => [
+            'type'        => 'textarea',
+            'label'       => esc_html__('Review Description', 'kirki'),
+            'default'     => 'Hive support has been the best tool for my business ever',
+        ],
+    ],
+));

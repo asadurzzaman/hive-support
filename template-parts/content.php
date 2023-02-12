@@ -33,10 +33,17 @@
 	<div class="hive_blogDetails__inner mt-4">
 		<?php the_content(); ?>
 	</div>
+	<?php 
+	if(has_tag()) :
+	?>
 	<div class="hive_blogDetails__tag mt-4 mt-lg-5">
 		<p class="hive_blogDetails__tagPara">Tags:</p>
 		<ul class="hive_blogDetails__tag__list">
 			<?php echo get_the_tag_list('<li>', '</li><li>', '</li>'); ?>
 		</ul>
 	</div>
+
+	<?php 
+	endif;
+	?>
 </div>

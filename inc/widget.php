@@ -141,7 +141,7 @@ class hive_tag_list_widget extends WP_Widget
             <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
         </p>
-<?php
+    <?php
     }
 
     public function update($new_instance, $old_instance)
@@ -152,5 +152,4 @@ class hive_tag_list_widget extends WP_Widget
     }
 }
 $Hive_Tag_list = new hive_tag_list_widget();
-
 

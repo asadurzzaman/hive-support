@@ -323,8 +323,10 @@ get_header();
                         <p class="newsletter_contents__para mt-3"> Loyal customers are built on support, Use hiveSupport to provide great support experiences to your customers. </p>
                         <div class="newsletter_contents__form custom-form mt-4">
                             <div class="single-input">
-                                <input type="text" class="form--control" placeholder="Enter Email">
-                                <button type="submit"> Submit </button>
+                                <?php
+                                $subscription = get_theme_mod('home_subscription_form'); 
+                                echo do_shortcode($subscription); 
+                                ?>
                             </div>
                         </div>
                     </div>

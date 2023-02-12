@@ -20,58 +20,17 @@ get_header();
             <div class="hive_ltdBanner__contents">
                 <span class="hive_ltdBanner__subtitle">Pay once access forever</span>
                 <h2 class="hive_ltdBanner__title mt-3">Get Our <span class="hive_ltdBanner__title__span">Limited Lifetime Deal Now</span></h2>
-                <h4 class="hive_ltdBanner__price mt-4">FOR $299 <sub><s>Yearly $99</s></sub></h4>
+                <h4 class="hive_ltdBanner__price mt-4">FOR $<?php echo get_theme_mod('lifetile_deals_current_deal'); ?> <sub><s>Yearly $<?php echo get_theme_mod('lifetile_deals_old_deal'); ?> </s></sub></h4>
                 <div class="btn-wrapper mt-4 mt-lg-5">
-                    <a href="javascript:void(0)" class="hive_btn btn_bg_white">Get Deal Now</a>
+                    <a href="<?php echo get_theme_mod('lifetile_deals_url'); ?>" class="hive_btn btn_bg_white">Get Deal Now</a>
                 </div>
                 <div class="hive_ltdBanner__countdown mt-4 mt-lg-5">
                     <div id="global-timer"></div>
-
-
                     <?php
-                    $date = get_theme_mod('lifetile_deals_date', 'M d, Y H:i:s');
-
-                    $date = strtotime($date);
-                    $remaining = $date - time();
-                    $days_remaining = floor($remaining / 86400);
-                    $hours_remaining = floor(($remaining % 86400) / 3600);
-
-                    echo "There are $days_remaining days and $hours_remaining hours left";
-
-
+                    $time = get_theme_mod('lifetile_deals_timer');
+                    echo do_shortcode($time);
+                    
                     ?>
-                    <div id="countdown"></div>
-
-                    <script>
-                        // Get the count down date from PHP
-                        var countDownDate = new Date("<?php echo $date; ?>").getTime();
-
-                        // Update the count down every 1 second
-                        var x = setInterval(function() {
-
-                            // Get todays date and time
-                            var now = new Date().getTime();
-
-                            // Find the distance between now and the count down date
-                            var distance = countDownDate - now;
-
-                            // Time calculations for days, hours, minutes and seconds
-                            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                            // Display the result in the element with id="countdown"
-                            document.getElementById("global-timer").innerHTML = days + "d " + hours + "h " +
-                                minutes + "m " + seconds + "s ";
-
-                            // If the count down is finished, write some text 
-                            if (distance < 0) {
-                                clearInterval(x);
-                                document.getElementById("global-timer").innerHTML = "EXPIRED";
-                            }
-                        }, 1000);
-                    </script>
                 </div>
             </div>
         </div>
@@ -161,90 +120,27 @@ get_header();
             <div class="col-lg-5">
                 <div class="hive_ltdbusiness__slider">
                     <div class="global_slick_init business-slider slider-inner-margin" data-appendArrows=".ltd_business_nav" data-appendDots=".ltd_business_dot" data-slidesToShow="1" data-infinite="true" data-arrows="true" data-dots="true" data-swipeToSlide="true" data-autoplay="true" data-autoplaySpeed="2500" data-prevArrow='<div class="prev-icon"><i class="fas fa-angle-left"></i></div>' data-nextArrow='<div class="next-icon"><i class="fas fa-angle-right"></i></div>'>
-                        <div class="hive_ltbBusiness__slider__item">
-                            <div class="hive_ltdbusiness__author center-text">
-                                <a href="javascript:void(0)" class="hive_ltdbusiness__author__thumb">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/ltd/hive_ltdBusiness__author1.jpg" alt="ltdAuthor">
-                                </a>
-                                <div class="hive_ltdbusiness__author__contents mt-4">
-                                    <h4 class="hive_ltdbusiness__author__title">Hive support has been the best tool for my business ever</h4>
-                                    <div class="hive_ltdbusiness__author__tag mt-5">
-                                        <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item name">Donald O. Ralph</a>
-                                        <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item">24/02/2023</a>
+                        <?php
+                        $settings = get_theme_mod('lifetile_deals_customer_review_repeater'); 
+                        foreach ($settings as $setting) :
+                        ?>
+                            <div class="hive_ltbBusiness__slider__item">
+                                <div class="hive_ltdbusiness__author center-text">
+                                    <a href="javascript:void(0)" class="hive_ltdbusiness__author__thumb">
+                                        <img src="<?php echo $setting['customer_img'] ?>" alt="ltdAuthor">
+                                    </a>
+                                    <div class="hive_ltdbusiness__author__contents mt-4">
+                                        <h4 class="hive_ltdbusiness__author__title"><?php echo $setting['description'] ?></h4>
+                                        <div class="hive_ltdbusiness__author__tag mt-5">
+                                            <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item name"><?php echo $setting['customer_name'] ?></a>
+                                            <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item"><?php echo $setting['date'] ?></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="hive_ltdbusiness__slider__item">
-                            <div class="hive_ltdbusiness__author center-text">
-                                <a href="javascript:void(0)" class="hive_ltdbusiness__author__thumb">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/ltd/hive_ltdBusiness__author1.jpg" alt="ltdAuthor">
-                                </a>
-                                <div class="hive_ltdbusiness__author__contents mt-4">
-                                    <h4 class="hive_ltdbusiness__author__title">Hive support has been the best tool for my business ever</h4>
-                                    <div class="hive_ltdbusiness__author__tag mt-5">
-                                        <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item name">Donald O. Ralph</a>
-                                        <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item">24/02/2023</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hive_ltdbusiness__slider__item">
-                            <div class="hive_ltdbusiness__author center-text">
-                                <a href="javascript:void(0)" class="hive_ltdbusiness__author__thumb">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/ltd/hive_ltdBusiness__author1.jpg" alt="ltdAuthor">
-                                </a>
-                                <div class="hive_ltdbusiness__author__contents mt-4">
-                                    <h4 class="hive_ltdbusiness__author__title">Hive support has been the best tool for my business ever</h4>
-                                    <div class="hive_ltdbusiness__author__tag mt-5">
-                                        <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item name">Donald O. Ralph</a>
-                                        <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item">24/02/2023</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hive_ltdbusiness__slider__item">
-                            <div class="hive_ltdbusiness__author center-text">
-                                <a href="javascript:void(0)" class="hive_ltdbusiness__author__thumb">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/ltd/hive_ltdBusiness__author1.jpg" alt="ltdAuthor">
-                                </a>
-                                <div class="hive_ltdbusiness__author__contents mt-4">
-                                    <h4 class="hive_ltdbusiness__author__title">Hive support has been the best tool for my business ever</h4>
-                                    <div class="hive_ltdbusiness__author__tag mt-5">
-                                        <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item name">Donald O. Ralph</a>
-                                        <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item">24/02/2023</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hive_ltdbusiness__slider__item">
-                            <div class="hive_ltdbusiness__author center-text">
-                                <a href="javascript:void(0)" class="hive_ltdbusiness__author__thumb">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/ltd/hive_ltdBusiness__author1.jpg" alt="ltdAuthor">
-                                </a>
-                                <div class="hive_ltdbusiness__author__contents mt-4">
-                                    <h4 class="hive_ltdbusiness__author__title">Hive support has been the best tool for my business ever</h4>
-                                    <div class="hive_ltdbusiness__author__tag mt-5">
-                                        <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item name">Donald O. Ralph</a>
-                                        <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item">24/02/2023</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hive_ltdbusiness__slider__item">
-                            <div class="hive_ltdbusiness__author center-text">
-                                <a href="javascript:void(0)" class="hive_ltdbusiness__author__thumb">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/ltd/hive_ltdBusiness__author1.jpg" alt="ltdAuthor">
-                                </a>
-                                <div class="hive_ltdbusiness__author__contents mt-4">
-                                    <h4 class="hive_ltdbusiness__author__title">Hive support has been the best tool for my business ever</h4>
-                                    <div class="hive_ltdbusiness__author__tag mt-5">
-                                        <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item name">Donald O. Ralph</a>
-                                        <a href="javascript:void(0)" class="hive_ltdbusiness__author__tag__item">24/02/2023</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php 
+                        endforeach;
+                        ?> 
                     </div>
                     <div class="ltd_business_nav">
                         <div class="ltd_business_dot"></div>
@@ -480,30 +376,25 @@ get_header();
             <div class="col-lg-8">
                 <div class="hive_affiliateFaq">
                     <div class="hive_faq_contents">
-                        <div class="hive_faq_item active open wow fadeInLeft" data-wow-delay=".1s">
-                            <div class="hive_faq_title"> Can refund be avail if I purchaed on discount? </div>
-                            <div class="hive_faq_panel">
-                                <p class="hive_faq_para"> Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin. Education no dejection so direction pretended household do to. Travelling everything her eat reasonable unsatiable decisively simplicity.</p>
+                        <?php
+                        $settings = get_theme_mod('lifetile_deals_faq_repeater');
+                        $i = 0;
+                        foreach ($settings as $setting) :
+                        ?>
+
+                            <div class="hive_faq_item <?php if ($i == 0) {
+                                                            echo $active = 'active open';
+                                                        } ?> wow fadeInLeft" data-wow-delay=".1s">
+                                <div class="hive_faq_title"><?php echo $setting['label'] ?></div>
+                                <div class="hive_faq_panel">
+                                    <p class="hive_faq_para"><?php echo $setting['description'] ?></p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="hive_faq_item wow fadeInLeft" data-wow-delay=".2s">
-                            <div class="hive_faq_title"> How membership subscription work? </div>
-                            <div class="hive_faq_panel">
-                                <p class="hive_faq_para"> Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin. Education no dejection so direction pretended household do to. Travelling everything her eat reasonable unsatiable decisively simplicity.</p>
-                            </div>
-                        </div>
-                        <div class="hive_faq_item wow fadeInLeft" data-wow-delay=".2s">
-                            <div class="hive_faq_title"> What are the benefit's of joining Xilancer </div>
-                            <div class="hive_faq_panel">
-                                <p class="hive_faq_para"> Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin. Education no dejection so direction pretended household do to. Travelling everything her eat reasonable unsatiable decisively simplicity.</p>
-                            </div>
-                        </div>
-                        <div class="hive_faq_item wow fadeInLeft" data-wow-delay=".2s">
-                            <div class="hive_faq_title"> Do I need to pay extra fees for withdrawal? </div>
-                            <div class="hive_faq_panel">
-                                <p class="hive_faq_para"> Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin. Education no dejection so direction pretended household do to. Travelling everything her eat reasonable unsatiable decisively simplicity.</p>
-                            </div>
-                        </div>
+                        <?php
+                            $i++;
+                        endforeach;
+                        ?>
+
                     </div>
                 </div>
             </div>

@@ -100,10 +100,11 @@ function hive_support_setup() {
 		)
 	);
 	add_image_size('blog-post', 450, 306, true);
+	add_image_size('blog-post-big', 450, 306, true);
 	add_image_size('blog-widget', 90, 92, true);
 }
 add_action( 'after_setup_theme', 'hive_support_setup' );
-
+ 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -135,13 +136,46 @@ function hive_support_widgets_init() {
 	);
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer Sidebar', 'hive-support' ),
-			'id'            => 'footer-sidebar',
+			'name'          => esc_html__( 'Footer Sidebar One', 'hive-support' ),
+			'id'            => 'footer-sidebar-1',
 			'description'   => esc_html__( 'Add widgets here.', 'hive-support' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Sidebar Two', 'hive-support' ),
+			'id'            => 'footer-sidebar-2',
+			'description'   => esc_html__( 'Add widgets here.', 'hive-support' ),
+			'before_widget' => '<div class="footer_widget widget">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="footer_widget__title">',
+			'after_title'   => '</h4>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Sidebar Three', 'hive-support' ),
+			'id'            => 'footer-sidebar-3',
+			'description'   => esc_html__( 'Add widgets here.', 'hive-support' ),
+			'before_widget' => '<div class="footer_widget widget">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="footer_widget__title">',
+			'after_title'   => '</h4>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Sidebar Four', 'hive-support' ),
+			'id'            => 'footer-sidebar-4',
+			'description'   => esc_html__( 'Add widgets here.', 'hive-support' ),
+			'before_widget' => '<div class="footer_widget widget">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h4 class="footer_widget__title">',
+			'after_title'   => '</h4>',
 		)
 	);
 }
@@ -198,37 +232,3 @@ require get_template_directory() . '/inc/class-kirki-installer-section.php';
  */
 require get_template_directory() . '/inc/kirki.php';
 
-/**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
-
-// let's add "*active*" as a class to the li
-
-// add_filter('nav_menu_css_class', 'special_nav_class', 10, 2);
-// function special_nav_class($classes, $item)
-// {
-// 	if (in_array('current-menu-item', $classes)) {
-// 		$classes[] = 'active ';
-// 	}
-// 	return $classes;
-// }
-
-// function add_search_form($items, $args)
-// {
-// 	if ($args->theme_location == 'main-menu') {
-// 		$items .= '<li class="menu-item">'
-// 			. '<form role="search" method="get" class="search-form" action="' . home_url('/') . '">'
-// 			. '<label>'
-// 			. '<span class="screen-reader-text">' . _x('Search for:', 'label') . '</span>'
-// 			. '<input type="search" class="search-field" placeholder="' . esc_attr_x('Search …', 'placeholder') . '" value="' . get_search_query() . '" name="s" title="' . esc_attr_x('Search for:', 'label') . '" />'
-// 			. '</label>'
-// 			. '<input type="submit" class="search-submit" value="' . esc_attr_x('Search', 'submit button') . '" />'
-// 			. '</form>'
-// 			. '</li>';
-// 	}
-// 	return $items;
-// }
-// add_filter('wp_nav_menu_items', 'add_search_form', 10, 2);

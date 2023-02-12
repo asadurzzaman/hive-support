@@ -4066,7 +4066,7 @@ textarea {
 .footer_widget__title {
   font-size: 24px;
   line-height: 28px;
-  margin: -4px 0 0;
+  margin: -4px 0 1.5rem 0;
 }
 @media only screen and (max-width: 767.98px) {
   .footer_widget__title {
@@ -4208,23 +4208,28 @@ textarea {
             justify-content: center;
   }
 }
+.footer_widget ul,
 .footer_widget__linkList {
   padding: 0;
   margin: 0;
   list-style: none;
 }
+.footer_widget li,
 .footer_widget__linkList__item {
   position: relative;
   z-index: 2;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+.footer_widget ul li:not(:last-child),
 .footer_widget__linkList__item:not(:last-child) {
   margin-bottom: 15px;
 }
+.footer_widget ul li:hover a,
 .footer_widget__linkList__item:hover a {
   color: var(--main-color-one);
 }
+.footer_widget ul li a,
 .footer_widget__linkList__item a {
   font-size: 16px;
   line-height: 24px;
@@ -4240,9 +4245,11 @@ textarea {
   display: -ms-flexbox;
   display: flex;
 }
+.footer_widget ul li a:hover,
 .footer_widget__linkList__item a:hover {
   color: var(--main-color-one);
 }
+.footer_widget ul li a::before,
 .footer_widget__linkList__item a::before {
   content: "\f105";
   font-family: "Font Awesome 5 Free";
@@ -5592,6 +5599,10 @@ article.page .entry-content p {
           align-items: flex-start;
   gap: 12px;
 }
+div#comments,
+div#respond {
+  margin-top: 50px;
+}
 @media only screen and (max-width: 375px) {
   .hive_blogDetails__comment__flex {
     -ms-flex-wrap: wrap;
@@ -5638,13 +5649,14 @@ form#commentform p textarea{
     background-color: var(--white);
     border-radius: 5px; 
     padding: 10px 15px;
+    width: 99%;
 }
 h4.comments-title {
   margin-top: 20px;
 }
 form#commentform p.comment-form-email,
 form#commentform p.comment-form-author {
-  width: 45%;
+  width: 49%;
   display: inline-block;
 }
 form#commentform p.comment-form-cookies-consent {
@@ -5667,6 +5679,9 @@ form#commentform p.comment-form-cookies-consent label {
 }
 form#commentform {
   margin-top: 20px;
+}
+span.single_testimonial__author__designation {
+  color: var(--heading-color);
 }
 .hive_blogDetails__comment__input button {
   position: absolute;

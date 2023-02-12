@@ -37,7 +37,7 @@ if (is_front_page()) {
 			<div class="container custom-container-one nav-container">
 				<div class="logo-wrapper">
 					<?php
-					if ( is_front_page() ) {
+					if (is_front_page()) {
 						the_custom_logo();
 					?>
 						<h1 class="site-title">
@@ -47,7 +47,7 @@ if (is_front_page()) {
 					} else { ?>
 						<a href="<?php echo home_url(); ?>">
 							<img src="<?php echo get_template_directory_uri() ?>/assets/img/logo_2.png" alt="provideImg">
-						</a> 
+						</a>
 					<?php } ?>
 				</div>
 				<div class="responsive-mobile-menu d-lg-none">
@@ -63,10 +63,10 @@ if (is_front_page()) {
 					<div class="single-right-content">
 						<div class="navbar-right-flex">
 							<div class="btn-wrapper">
-								<a href="javascript:void(0)" class="hive_btn btn_underline <?php echo $menu_link; ?>">Try Free Version</a>
+								<a href="<?php echo get_theme_mod('header_area_free_button_url'); ?>" class="hive_btn btn_underline <?php echo $menu_link; ?>"><?php echo get_theme_mod('header_area_free_button'); ?></a>
 							</div>
 							<div class="btn-wrapper">
-								<a href="javascript:void(0)" class="hive_btn <?php echo $menu_button_link; ?>">Get Pro</a>
+								<a href="<?php echo get_theme_mod('header_area_pro_button_url'); ?>" class="hive_btn <?php echo $menu_button_link; ?>"><?php echo get_theme_mod('header_area_pro_button'); ?></a>
 							</div>
 						</div>
 					</div>

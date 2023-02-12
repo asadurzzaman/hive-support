@@ -19,7 +19,7 @@ get_header();
                         <span class="hive_affiliatebanner__subtitle">Got the traffic?</span>
                         <h2 class="hive_affiliatebanner__title"> Refer Our Product And Earn a Handsome Commission </h2>
                         <div class="hive_affiliatebanner__btn mt-4 mt-lg-5">
-                            <a href="javascript:void(0)" class="hive_btn btn_bg_1"> Join Now </a>
+                            <a href="<?php echo get_theme_mod('affiliate_join_url'); ?>" class="hive_btn btn_bg_1"> Join Now </a>
                         </div>
                     </div>
                 </div>
@@ -136,30 +136,23 @@ get_header();
             <div class="col-lg-8">
                 <div class="hive_affiliateFaq">
                     <div class="hive_faq_contents">
-                        <div class="hive_faq_item active open wow fadeInLeft" data-wow-delay=".1s">
-                            <div class="hive_faq_title"> Can refund be avail if I purchaed on discount? </div>
-                            <div class="hive_faq_panel">
-                                <p class="hive_faq_para"> Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin. Education no dejection so direction pretended household do to. Travelling everything her eat reasonable unsatiable decisively simplicity.</p>
+                        <?php
+                        $settings = get_theme_mod('affiliate_faq_repeater');
+                        $i = 0;
+                        foreach ($settings as $setting) :
+                        ?>
+                            <div class="hive_faq_item <?php if ($i == 0) {
+                                                            echo $active = 'active open';
+                                                        } ?> wow fadeInLeft" data-wow-delay=".1s">
+                                <div class="hive_faq_title"><?php echo $setting['label'] ?></div>
+                                <div class="hive_faq_panel">
+                                    <p class="hive_faq_para"><?php echo $setting['description'] ?></p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="hive_faq_item wow fadeInLeft" data-wow-delay=".2s">
-                            <div class="hive_faq_title"> How membership subscription work? </div>
-                            <div class="hive_faq_panel">
-                                <p class="hive_faq_para"> Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin. Education no dejection so direction pretended household do to. Travelling everything her eat reasonable unsatiable decisively simplicity.</p>
-                            </div>
-                        </div>
-                        <div class="hive_faq_item wow fadeInLeft" data-wow-delay=".2s">
-                            <div class="hive_faq_title"> What are the benefit's of joining Xilancer </div>
-                            <div class="hive_faq_panel">
-                                <p class="hive_faq_para"> Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin. Education no dejection so direction pretended household do to. Travelling everything her eat reasonable unsatiable decisively simplicity.</p>
-                            </div>
-                        </div>
-                        <div class="hive_faq_item wow fadeInLeft" data-wow-delay=".2s">
-                            <div class="hive_faq_title"> Do I need to pay extra fees for withdrawal? </div>
-                            <div class="hive_faq_panel">
-                                <p class="hive_faq_para"> Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin. Education no dejection so direction pretended household do to. Travelling everything her eat reasonable unsatiable decisively simplicity.</p>
-                            </div>
-                        </div>
+                        <?php
+                            $i++;
+                        endforeach;
+                        ?> 
                     </div>
                 </div>
             </div>

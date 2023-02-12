@@ -22,7 +22,7 @@ function hive_custom_comment_field($fields)
 
     $fields['author'] = '<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label><input type="text" id="author" name="author" require="required" placeholder="Name"></p>';
     $fields['email'] = '<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label><input type="text" id="email" name="email" require="required" placeholder="Email"></p>';
-    $fields['comment'] = '<p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label><textarea id="comment" rows="3" cols="85" name="comment" required="required" placeholder="Comment"></textarea></p>';
+    $fields['comment'] = '<p class="comment-form-comment"><label for="comment">Comment <span class="required">*</span></label><textarea id="comment" name="comment" required="required" placeholder="Comment"></textarea></p>';
     $fields['cookies'] = '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"><label for="wp-comment-cookies-consent">Save details for future comments?</label></p>';
     return $fields;
 }
