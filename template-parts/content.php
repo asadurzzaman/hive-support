@@ -26,7 +26,7 @@
 		</div>
 		<div class="hive_blogDetails__social">
 			<h6 class="hive_blogDetails__social__para">Share to:</h6> 
-			<?php //echo do_shortcode('[hive_post_social_sharing]'); 
+			<?php echo do_shortcode('[social]'); 
 			?>
 		</div>
 	</div>

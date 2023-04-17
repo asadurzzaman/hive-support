@@ -231,4 +231,4 @@ require get_template_directory() . '/inc/class-kirki-installer-section.php';
  * kirki installer .
  */
 require get_template_directory() . '/inc/kirki.php';
-
+ 

@@ -40,6 +40,12 @@ Kirki::add_section('price_table_three', array(
     'priority'       => 160,
 ));
 
+Kirki::add_section('price_page_faq', array(
+    'title'          => esc_html__('Pricing Page FAQ', 'kirki'),
+    'panel'          => 'hsupport_panel',
+    'priority'       => 160,
+));
+
 Kirki::add_section('faq_section_id', array(
     'title'          => esc_html__('FAQ Page', 'kirki'),
     'panel'          => 'hsupport_panel',
@@ -321,7 +327,7 @@ kirki::add_field('hive_support_customizer', array(
 
 
 /**
- * Pring Table One
+ * Pricing Table One
  * 
  * 
  * */
@@ -354,13 +360,13 @@ Kirki::add_field('hive_support_customizer', array(
     'default'     => 'Free/Lifetime',
 ));
 Kirki::add_field('hive_support_customizer', array(
-    'type'        => 'text',
+    'type'        => 'url',
     'settings'    => 'price_section_one_url',
-    'label'       => esc_html__('Product ID for Add to Cart', 'kirki'),
+    'label'       => esc_html__('Product Cart URL', 'kirki'),
     'section'     => 'price_table_one',
     'transport'   => 'refresh',
     'priority'    => 10,
-    'default'     => '32456',
+    'default'     => site_url().'/checkout',
 ));
 Kirki::add_field('hive_support_customizer', array(
     'type'        => 'text',
@@ -454,7 +460,7 @@ Kirki::add_field('hive_support_customizer', array(
 ));
 
 /**
- * Pring Table Two
+ * Pricing Table Two
  * 
  * 
  * */
@@ -489,13 +495,13 @@ Kirki::add_field('hive_support_customizer', array(
 ));
 
 Kirki::add_field('hive_support_customizer', array(
-    'type'        => 'text',
+    'type'        => 'url',
     'settings'    => 'price_section_two_url',
-    'label'       => esc_html__('Product ID for Add to Cart', 'kirki'),
+    'label'       => esc_html__('Product Cart URL', 'kirki'),
     'section'     => 'price_table_two',
     'transport'   => 'refresh',
     'priority'    => 10,
-    'default'     => '32456',
+   'default'     => site_url().'/checkout',
 ));
 Kirki::add_field('hive_support_customizer', array(
     'type'        => 'text',
@@ -588,7 +594,7 @@ Kirki::add_field('hive_support_customizer', array(
     ],
 ));
 /**
- * Pring Table Three
+ * Pricing Table Three
  * 
  * 
  * */
@@ -623,13 +629,13 @@ Kirki::add_field('hive_support_customizer', array(
 ));
 
 Kirki::add_field('hive_support_customizer', array(
-    'type'        => 'text',
+    'type'        => 'url',
     'settings'    => 'price_section_three_url',
-    'label'       => esc_html__('Product ID for Add to Cart', 'kirki'),
+    'label'       => esc_html__('Product Cart URL', 'kirki'),
     'section'     => 'price_table_three',
     'transport'   => 'refresh',
     'priority'    => 10,
-    'default'     => '32456',
+    'default'     => site_url().'/checkout',
 ));
 Kirki::add_field('hive_support_customizer', array(
     'type'        => 'text',
@@ -722,6 +728,42 @@ Kirki::add_field('hive_support_customizer', array(
     ],
 ));
 /**
+ * Pricing Page FAQ
+ */
+Kirki::add_field('hive_support_customizer', array(
+    'type'        => 'repeater',
+    'settings'    => 'price_page_faq_repeater',
+    'label'       => esc_html__('Pricing Page FAQ', 'kirki'),
+    'section'     => 'price_page_faq',
+    'transport'   => 'refresh',
+    'priority'    => 10,
+    'row_label'    => [
+        'type'  => 'field',
+        'value' => esc_html__('FAQ ', 'kirki'),
+        'field' => 'link_text',
+    ],
+    'button_label' => esc_html__('Add New Faq', 'kirki'),
+    'default'     => [
+        [
+            'label'       => esc_html__('Can refund be avail if I purchased on discount?', 'kirki'),
+            'description' => esc_html__('Was drawing natural fat respect husband. An as noisy an offer drawn blush place. These tried for way joy wrote witty. In mr began music weeks after at begin. Education no dejection so direction pretended household do to. Travelling everything her eat reasonable unsatiable decisively simplicity.', 'kirki'),
+        ],
+    ],
+    'fields'   => [
+        'label' => [
+            'type'        => 'text',
+            'label'       => esc_html__('Faq Title', 'kirki'),
+            'default'     => 'Faq Title',
+        ],
+        'description' => [
+            'type'        => 'textarea',
+            'label'       => esc_html__('Faq Description', 'kirki'),
+            'default'     => 'Faq Description',
+        ],
+
+    ],
+));
+/**
  * FAQ Page
  * 
  * 
@@ -730,7 +772,7 @@ Kirki::add_field('hive_support_customizer', array(
 kirki::add_field('hive_support_customizer', array(
     'type'  =>  'editor',
     'settings'    => 'faq_from',
-    'label'       => esc_html__('Contect From Shortcode', 'kirki'),
+    'label'       => esc_html__('Contact From Shortcode', 'kirki'),
     'section'     => 'faq_section_id',
     'transport'   => 'refresh',
     'priority'    => 10,
