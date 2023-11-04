@@ -10854,3 +10854,202 @@ body.dragging * {
     transform: translate(0);
   }
 }
+/* Integration Banner */
+.hive_integration__banner {
+  max-width: 450px;
+}
+
+.hive_integration__banner__title {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--heading-color);
+}
+
+@media only screen and (max-width: 480px) {
+  .hive_integration__banner__title {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .hive_integration__banner__title {
+    font-size: 26px;
+  }
+}
+
+.hive_integration__banner__para {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--paragraph-color);
+}
+
+/* Integration area */
+@media (min-width: 1200px) {
+  .integration_brandChild:nth-child(4n+5) {
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+  }
+
+  .integration_brandChild:nth-child(4n+6) {
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+  }
+
+  .integration_brandChild:nth-child(4n+7) {
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+  }
+
+  .integration_brandChild:nth-child(4n+8) {
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .integration_brandChild:nth-child(3n+4) {
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+  }
+
+  .integration_brandChild:nth-child(3n+5) {
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+  }
+
+  .integration_brandChild:nth-child(3n+6) {
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+  }
+
+  .integration_brandChild:nth-child(3n+7) {
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 991.98px) {
+  .integration_brandChild:nth-child(2n+3) {
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+  }
+
+  .integration_brandChild:nth-child(2n+4) {
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+  }
+}
+
+@media only screen and (max-width: 575.98px) {
+  .integration_brandChild:nth-child(2n+2) {
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+  }
+}
+
+.hive_integration__brand__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.hive_integration__brand__thumb {
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  padding: 12px;
+  height: 70px;
+  width: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.hive_integration__brand__thumb img {
+  max-width: 60px;
+}
+
+.hive_integration__brand__contents {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.hive_integration__brand__title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--heading-color);
+}
+
+@media only screen and (max-width: 767.98px) {
+  .hive_integration__brand__title {
+    font-size: 18px;
+  }
+}
+
+.hive_integration__brand__btn {
+  position: relative;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--main-color-one);
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.hive_integration__brand__btn::after {
+  content: "\f054";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 14px;
+}
+/* Features css */
+.hive_features__title {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--heading-color);
+}
+
+@media only screen and (max-width: 480px) {
+  .hive_features__title {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .hive_features__title {
+    font-size: 26px;
+  }
+}
+
+.hive_features__para {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--paragraph-color);
+}
+
+.hive_features__thumb img {
+  border-radius: 10px;
+}

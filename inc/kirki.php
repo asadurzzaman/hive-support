@@ -70,6 +70,18 @@ Kirki::add_section('lifetile_deals_id', array(
     'priority'       => 160,
 ));
 
+Kirki::add_section('features_page_id', array(
+    'title'          => esc_html__('Features Page', 'kirki'),
+    'panel'          => 'hsupport_panel',
+    'priority'       => 160,
+));
+
+Kirki::add_section('integration_page_id', array(
+    'title'          => esc_html__('Integration Page', 'kirki'),
+    'panel'          => 'hsupport_panel',
+    'priority'       => 160,
+));
+
 
 /**
  * Header Area
@@ -1025,4 +1037,35 @@ Kirki::add_field('hive_support_customizer', array(
             'default'     => 'Hive support has been the best tool for my business ever',
         ],
     ],
+));
+
+/**
+ * Features Page
+ * 
+ * 
+ * */
+kirki::add_field('hive_support_customizer', array(
+    'type'        => 'number',
+    'settings'    => 'features_page_id',
+    'label'       => esc_html__('Old Deal', 'kirki'),
+    'section'     => 'features_page_id',
+    'default'     => '599',
+    'priority'    => 10,
+    'transport'   => 'refresh', // or postMessage
+));
+
+ /**
+ * Integration Page
+ * 
+ * 
+ * */
+
+ kirki::add_field('hive_support_customizer', array(
+    'type'        => 'number',
+    'settings'    => 'integration_page_id',
+    'label'       => esc_html__('Old Deal', 'kirki'),
+    'section'     => 'integration_page_id',
+    'default'     => '599',
+    'priority'    => 10,
+    'transport'   => 'refresh', // or postMessage
 ));
